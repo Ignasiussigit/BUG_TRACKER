@@ -1,0 +1,41 @@
+<?php 
+session_start();
+date_default_timezone_set('Asia/Jakarta');
+include '../koneksi.php';
+$id = $_SESSION['id'];
+$waktu = date('Y-m-d');
+$tanggal = date('Y-m-d h:i:s');
+
+$urgency  = mysqli_real_escape_string($koneksi, htmlspecialchars($_POST['urgency']));
+$email  = mysqli_real_escape_string($koneksi, htmlspecialchars($_POST['email']));
+$departemen  = mysqli_real_escape_string($koneksi, htmlspecialchars($_POST['departemen']));
+$judul  = mysqli_real_escape_string($koneksi, htmlspecialchars($_POST['judul']));
+$keterangan  = mysqli_real_escape_string($koneksi, htmlspecialchars($_POST['keterangan']));
+
+
+$rand = rand();
+$allowed =  array('gif','png','jpg','jpeg','PNG','JPG','JPEG');
+$filename = $_FILES['gambar']['name'];
+
+if($filename == ""){
+	mysqli_query($koneksi,"insert into pengaduan values(NULL,'$id','','$tanggal','$judul','$keterangan','$urgency','$email','$departemen','','Open','',NULL,NULL)");
+	$id = mysqli_insert_id($koneksi);
+	$nomor = str_replace('-', '', $waktu).$id;
+	mysqli_query($koneksi,"update pengaduan set pengaduan_nomor='$nomor' where pengaduan_id='$id'");
+	header("location:tiket.php?alert=tiket");
+
+}else{
+	$ext = pathinfo($filename, PATHINFO_EXTENSION);
+	if(!in_array($ext,$allowed)){
+		header("location:tiket.php?alert=gagal");
+	}else{
+		move_uploaded_file($_FILES['gambar']['tmp_name'], '../gambar/tiket/'.$rand.'_'.$filename);
+		$file_gambar = $rand.'_'.$filename;
+		mysqli_query($koneksi,"insert into pengaduan values(NULL,'$id','','$tanggal','$judul','$keterangan','$urgency','$email','$departemen','$file_gambar','Open','',NULL,NULL)");
+		$id = mysqli_insert_id($koneksi);
+		$nomor = str_replace('-', '', $waktu).$id;
+		mysqli_query($koneksi,"update pengaduan set pengaduan_nomor='$nomor' where pengaduan_id='$id'");
+		header("location:tiket.php?alert=tiket");
+	}
+}
+
