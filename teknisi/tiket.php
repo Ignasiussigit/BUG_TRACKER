@@ -22,11 +22,25 @@
 
           <div class="box-header">
             <h3 class="box-title">Tiket</h3> 
-
-            <div class="btn-group pull-right">  
-              
-
-            </div>          
+            
+            <div class="pull-right" style="width:250px">
+              <div class="form-group">
+                <label>Filter Unit</label>
+                <select class="form-control" id="filterUnit">
+                  <option value="">Semua Unit</option>
+                  <option value="RAJAL-POLI SPESIALIS">RAJAL-POLI SPESIALIS</option>
+                  <option value="RAJAL-POLI UMUM">RAJAL-POLI UMUM</option>
+                  <option value="RANAP">RANAP</option>
+                  <option value="LABORATORIUM">LABORATORIUM</option>
+                  <option value="RADIOLOGI">RADIOLOGI</option>
+                  <option value="FISIOTERAPI">FISIOTERAPI</option>
+                  <option value="FARMASI">FARMASI</option>
+                  <option value="KEBIDANAN">KEBIDANAN</option>
+                  <option value="GIZI">GIZI</option>
+                </select>
+              </div>
+            </div>
+         
           </div>
 
           <div class="box-body">
@@ -34,6 +48,7 @@
             <div class="table-responsive">
               <table class="table table-bordered table-striped" id="table-datatable">
                 <thead>
+                  <!-- jika ingin memunculkan search/pencarian bisa buka komentar th dan di bagian footer.php(teknisi) bisa dibuka juka komentar-nya -->
                   <tr>
                     <th width="1%">NO</th>
                     <th>NOMOR TIKET</th>                    
@@ -41,9 +56,11 @@
                     <th>TANGGAL PENYELESAIAN</th> 
                     <th>DEVELOPER</th>                   
                     <th>URGENCY</th>                                        
-                    <th>JUDUL</th>                                        
-                    <th>STATUS</th>                 
-                    <th width="1%">OPSI</th>
+                    <th>JUDUL</th>
+                    <th>UNIT</th>    
+                    <th>STATUS </th>                
+                    <th width="1%">UPDATE</th>
+                    <th>&nbsp;</th>                                    
                   </tr>
                 </thead>
                 <tbody>
@@ -90,7 +107,13 @@
                           <span class="label label-success"><?php echo $d['pengaduan_urgency'] ?></span>
                           <?php
                         } ?></td>
-                        <td><?php echo $d['pengaduan_judul']; ?></td>
+                        <td>
+                          <?php echo $d['pengaduan_judul']; ?>
+                        </td>
+
+                        <td>
+                          <?php echo $d['pengaduan_email']; ?>
+                        </td>
                         
                                    
                       <td>

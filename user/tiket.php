@@ -55,8 +55,14 @@
                         <select class="form-control" name="email" required>
                           <option value="">-pilih-</option>
                           <option value="RAJAL-POLI SPESIALIS">RAJAL-POLI SPESIALIS</option>
-                          <option value="RAJAL-POLI BEDAH">RAJAL-POLI BEDAH</option>
+                          <option value="RAJAL-POLI UMUM">RAJAL-POLI UMUM</option>
                           <option value="RANAP">RANAP</option>
+                          <option value="LABORATORIUM">LABORATORIUM</option>
+                          <option value="RADIOLOGI">RADIOLOGI</option>
+                          <option value="FISIOTERAPI">FISOTERAPI</option>
+                          <option value="FARMASI">FARMASI</option>
+                          <option value="KEBIDANAN">KEBIDANAN</option>
+                          <option value="GIZI">GIZI</option>
                         </select>
                       </div>  
                       <!-- <div class="form-group">
@@ -65,7 +71,7 @@
                       </div> -->
                       <div class="form-group">
                         <label>Departemen <small style="color:red">*</small> </label>
-                        <input type="text" name="departemen" required="required" placeholder="Ditujukan ke pada bagian (IT,ENG & etc)" class="form-control">
+                        <input type="text" name="departemen" required="required" placeholder="Ditujukan ke pada bagian (SIMRS)" class="form-control">
                       </div>
                       <div class="form-group">
                         <label>Judul <small style="color:red">*</small> </label>
@@ -241,8 +247,14 @@
                                     <select class="form-control" name="email" required>
                                       <option value="">-pilih-</option>
                                       <option <?php if($d['pengaduan_email']=="RAJAL-POLI SPESIALIS"){echo "selected='selected'";} ?> value="RAJAL-POLI SPESIALIS">RAJAL-POLI SPESIALIS</option>
-                                      <option <?php if($d['pengaduan_email']=="RAJAL-POLI BEDAH"){echo "selected='selected'";} ?> value="RAJAL-POLI BEDAH">RAJAL-POLI BEDAH</option>
+                                      <option <?php if($d['pengaduan_email']=="RAJAL-POLI UMUM"){echo "selected='selected'";} ?> value="RAJAL-POLI UMUM">RAJAL-POLI UMUM</option>
                                       <option <?php if($d['pengaduan_email']=="RANAP"){echo "selected='selected'";} ?> value="RANAP">RANAP</option>
+                                      <option <?php if($d['pengaduan_email']=="LABORATORIUM"){echo "selected='selected'";} ?> value="LABORATORIUM">LABORATORIUM</option>
+                                      <option <?php if($d['pengaduan_email']=="RADIOLOGI"){echo "selected='selected'";} ?> value="RADIOLOGI">RADIOLOGI</option>
+                                      <option <?php if($d['pengaduan_email']=="FISOTERAPI"){echo "selected='selected'";} ?> value="FISOTERAPI">FISOTERAPI</option>
+                                      <option <?php if($d['pengaduan_email']=="FARMASI"){echo "selected='selected'";} ?> value="FARMASI">FARMASI</option>
+                                      <option <?php if($d['pengaduan_email']=="KEBIDANAN"){echo "selected='selected'";} ?> value="KEBIDANAN">KEBIDANAN</option>
+                                      <option <?php if($d['pengaduan_email']=="GIZI"){echo "selected='selected'";} ?> value="GIZI">GIZI</option>
                                     </select>
                                   </div>  
                                   <!-- <div class="form-group" style="width:100%">

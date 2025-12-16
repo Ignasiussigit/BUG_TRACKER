@@ -62,7 +62,7 @@ $tahun_ini = date('Y');
 
 <script>
   $(document).ready(function(){
-
+// jika ingin memunculkan search/pencarian bisa buka komentar th di bagian tiket.php(teknisi) bisa dibuka juka komentar-nya
     $('#table-datatable').DataTable({
       'paging'      : true,
       'lengthChange': false,
@@ -72,6 +72,21 @@ $tahun_ini = date('Y');
       'autoWidth'   : true,
       "pageLength": 50
     });
+
+// fungsinya untuk filter unit pada tabel tiket teknisi
+    $('#filterUnit').on('change', function () {
+    var unit = $(this).val().toLowerCase();
+
+    $('#table-datatable tbody tr').each(function () {
+      var rowUnit = $(this).find('td:eq(7)').text().trim().toLowerCase();
+
+      if (unit === '' || rowUnit === unit) {
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
+    });
+  });
 
     $('#table-datatable-produk').DataTable({
       'paging'      : true,
