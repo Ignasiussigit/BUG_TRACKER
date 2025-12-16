@@ -92,7 +92,7 @@
                         } ?></td>
                         <td><?php echo $d['pengaduan_judul']; ?></td>
                         
-                      <td><?php echo $d['pengaduan_judul']; ?></td>                    
+                                   
                       <td>
                         <?php 
                         if($d['pengaduan_status']=="Open"){

@@ -14,7 +14,16 @@
 
   <?php 
   $id = $_GET['id'];
-  $data = mysqli_query($koneksi,"select * from pengaduan where pengaduan_id='$id'");
+  // $data = mysqli_query($koneksi,"select * from pengaduan where pengaduan_id='$id'");
+    $data = mysqli_query($koneksi,"
+    SELECT 
+      p.*,
+      a.admin_nama
+    FROM pengaduan p
+    LEFT JOIN admin a 
+      ON p.pengaduan_teknisi = a.admin_id
+    WHERE p.pengaduan_id = '$id'
+  ");
 
   $d = mysqli_fetch_assoc($data);
   
@@ -42,7 +51,14 @@
            <ul class="list-group list-group-unbordered">
             <li class="list-group-item">
               <b>Nomor Tiket</b> <a class="pull-right"><?php echo $d['pengaduan_nomor'] ?></a>
-            </li> 
+            </li>
+            
+            <li class="list-group-item">
+              <b>Developer</b>
+              <a class="pull-right">
+                <?= $d['admin_nama'] ? $d['admin_nama'] : '<i>Belum ditangani</i>'; ?>
+              </a>
+            </li>
             
              <li class="list-group-item">
               <b>Urgency</b> 

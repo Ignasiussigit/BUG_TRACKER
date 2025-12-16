@@ -21,6 +21,6 @@ if($cek > 0){
 	header("location:user/");
 	
 }else{
-	header("location:login_mentor.php?alert=gagal");
+	header("location:login_user.php?alert=gagal");
 }
 

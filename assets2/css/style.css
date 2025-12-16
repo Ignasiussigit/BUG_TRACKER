@@ -70,3 +70,11 @@ footer {
 .bg-gradient-2 {
   background: linear-gradient(87deg, #07395e, #257bd3 100%) !important;
 }
+
+/* .background{
+  height: 500px !important;
+  background: url(/elisabeth.jpg) !important;
+  background-position: center !important; 
+  background-repeat: no-repeat !important; 
+  background-size: cover !important; 
+} */

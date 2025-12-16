@@ -1,17 +1,17 @@
 
     <footer>
-       <div class="bg-white py-5 border">
+       <!-- <div class="bg-white py-5 border">
             <div class="container">
                 <div class="row justify-content-center text-center">
                   <a class="navbar-brand mb-3" href="index.php"><img style="height:70px; width:70px" src="gambar/sistem/logo.png" alt=""></a> <br>                  
 
                 </div>
             </div>
-        </div>
+        </div> -->
+        <!-- <br> -->
         <br>
-        <br>
-        <nav class=" bg-white border shadow-sm p-3">
-            <p class="text-center m-0 small fw-semibold">&copy; RS.St.Elisabeth Bekasi</a></p>
+        <nav class=" bg-white border shadow-sm p-3 bawah">
+            <h3 class="text-center m-0 small fw-semibold">&copy; RS.St.Elisabeth Bekasi</a></h3>
         </nav>
     </footer>
 

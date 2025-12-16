@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="gambar/sistem/logo.png">
+    <link rel="icon" href="./gambar/sistem/logo.png">
     <title>BUG TRACKER</title>
     
     <meta name=googlebot content="index,follow" >
@@ -37,6 +37,18 @@
     </style>
 
 <style>
+      .hero{
+        min-height: 100vh;
+      }
+
+      .hero .hero-text{
+        margin-top: 50px;
+      }
+
+      /* footer{
+        position: relative;
+        background-color: #006436;
+      } */
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -113,6 +125,16 @@
 
       .bd-mode-toggle .dropdown-menu .active .bi {
         display: block !important;
+      }
+
+      .navbar{
+        position: fixed;
+        z-index: 1000;
+        width: 100%;
+      }
+
+      .bawah{
+        /* background-color: #006436 !important; */
       }
     </style>
 
