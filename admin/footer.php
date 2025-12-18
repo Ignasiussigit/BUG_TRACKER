@@ -99,34 +99,28 @@ $tahun_ini = date('Y');
       let lastTotal = null;
   const sound = document.getElementById('notifSound');
 
-  function cekNotif() {
-    $.ajax({
-      url: 'cek_notif.php',
-      type: 'GET',
-      dataType: 'json',
-      success: function(res) {
+    function cekNotif(){
+    $.get('cek_notif.php', function(res){
+      let total = parseInt(res);
 
-        let total = parseInt(res.total);
+      // update badge
+      $('#notif-count').text(total);
+      $('.messages-menu .header')
+        .text('Anda Memiliki ' + total + ' Tiket Layanan');
 
-        // update badge angka
-        $('.messages-menu .label-danger').text(total);
-        $('.messages-menu .header')
-          .text('Anda Memiliki ' + total + ' Tiket Layanan');
-
-        // load pertama → jangan bunyi
-        if (lastTotal === null) {
-          lastTotal = total;
-          return;
-        }
-
-        // jika ada tiket baru → bunyi
-        if (total > lastTotal) {
-          sound.currentTime = 0;
-          sound.play().catch(()=>{});
-        }
-
+      // load pertama → jangan bunyi
+      if(lastTotal === null){
         lastTotal = total;
+        return;
       }
+
+      // tiket baru → bunyi 1x
+      if(total > lastTotal){
+        sound.currentTime = 0;
+        sound.play().catch(()=>{});
+      }
+
+      lastTotal = total;
     });
   }
 

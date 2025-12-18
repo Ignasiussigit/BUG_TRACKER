@@ -33,7 +33,7 @@
 <body class="hold-transition skin-blue sidebar-mini">
 
 <!-- notif sound admin -->
-  <audio id="notifSound">
+  <audio id="notifSound" preload="auto">
     <source src="../assets/sound/voice.mp3" type="audio/mpeg">
   </audio>
 
@@ -75,7 +75,7 @@
               ?>
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-globe"></i>
-                <span class="label label-danger"><?php echo mysqli_num_rows($pengaduan) ?></span>
+                <span class="label label-danger" id="notif-count"><?php echo mysqli_num_rows($pengaduan) ?></span>
               </a>
               <ul class="dropdown-menu">
                 <li class="header">Anda Memiliki <?php echo mysqli_num_rows($pengaduan)  ?> Tiket Layanan</li>
