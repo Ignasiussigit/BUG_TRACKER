@@ -95,6 +95,47 @@ $tahun_ini = date('Y');
 
   });
 
+  
+      let lastTotal = null;
+  const sound = document.getElementById('notifSound');
+
+  function cekNotif() {
+    $.ajax({
+      url: 'cek_notif.php',
+      type: 'GET',
+      dataType: 'json',
+      success: function(res) {
+
+        let total = parseInt(res.total);
+
+        // update badge angka
+        $('.messages-menu .label-danger').text(total);
+        $('.messages-menu .header')
+          .text('Anda Memiliki ' + total + ' Tiket Layanan');
+
+        // load pertama → jangan bunyi
+        if (lastTotal === null) {
+          lastTotal = total;
+          return;
+        }
+
+        // jika ada tiket baru → bunyi
+        if (total > lastTotal) {
+          sound.currentTime = 0;
+          sound.play().catch(()=>{});
+        }
+
+        lastTotal = total;
+      }
+    });
+  }
+
+  // cek pertama kali
+  cekNotif();
+
+  // cek tiap 5 detik
+  setInterval(cekNotif, 5000);
+
   var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
 
   

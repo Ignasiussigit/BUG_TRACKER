@@ -125,6 +125,7 @@ $tahun_ini = date('Y');
     toolbar: [
       ['style', ['bold', 'italic', 'underline']],
       ['para', ['ul', 'ol', 'paragraph']],
+      ['color', ['color']],
       ['insert', ['link','picture']],
       ['view', ['codeview']]
     ]

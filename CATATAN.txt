@@ -17,3 +17,18 @@ http://localhost/BUG_TRACKER/daftar_user.php
 
 halaman Login Admin dan Teknisi
 http://localhost/BUG_TRACKER/login.php
+
+akun admin:
+username = admin
+pw	 = admin
+
+teknisi/dev:
+username = arifin
+pw	 = 123
+
+username = eko
+pw	 = 123
+
+akun user:
+username = sigit
+pw	 = 123

@@ -16,18 +16,19 @@
   <section class="content">
     <div class="row">
       <section class="col-lg-12">
-
-
         <div class="box box-success">
-
+          
           <div class="box-header">
             <h3 class="box-title">Tiket Saya</h3> 
-
-            <div class="btn-group pull-right">  
+            <div class="btn-group pull-right">
+              <div class="pull-left">  
+               <button type="button" class="btn btn-primary btn-sm margin-r-5" data-toggle="modal" data-target="#exampleModal1">
+                 Penjelasan
+              </button>   
                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#exampleModal">
                 <i class="fa fa-plus"></i> &nbsp Buat Tiket Baru
               </button>
-
+              
               <!-- Modal -->
             <form action="tiket_act.php" method="post" enctype="multipart/form-data">
               <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -95,6 +96,46 @@
                 </div>
               </div>
             </form>
+
+            <!-- MODAL PENJELASAN -->
+            <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                      <h4 class="modal-title" id="exampleModalLabel">URGENCY</h4>
+                    </div>
+                    <div class="modal-body">
+
+                      <div class="form-group">
+                        <button class="btn btn-danger">High</button>
+                        <!-- <label>Urgency <small style="color:red"></small> </label> -->
+                        <p>Masalah yang sangat kritis, biasanya mengganggu fungsi utama atau keseluruhan sistem, dan harus segera diperbaiki.</p>
+                        <button class="btn btn-warning">Medium</button>
+                        <p>Masalah dengan dampak sedang, tidak langsung merusak fungsi utama tetapi tetap mempengaruhi pengalaman pengguna atau kinerja sistem.</p>
+                        <button class="btn btn-success">Low</button>
+                        <p>Masalah kecil, biasanya terkait dengan tampilan, fitur kecil, atau masalah yang jarang terjadi dan tidak mengganggu operasi utama.Masalah minor, biasanya terkait dengan tampilan, fitur kecil, atau masalah yang jarang terjadi dan tidak mengganggu operasi utama.</p>
+
+                        <h4 class="modal-title" id="exampleModalLabel">STATUS</h4>
+                        <button class="btn btn-danger">Open</button>
+                        <p>Bug baru dilaporkan dan belum ditindaklanjuti.</p>
+                        <button class="btn btn-warning">Pending</button>
+                        <p>Bug sedang menunggu konfirmasi atau persetujuan lebih lanjut, atau menunggu sumber daya untuk diperbaiki.</p>
+                        <button class="btn btn-primary">Progress</button>
+                        <p>Bug sedang dalam proses perbaikan atau penyelidikan.</p>
+                        <button class="btn btn-success">Close</button>
+                        <p>Bug sudah diperbaiki dan masalah telah selesai.</p>
+                      </div>   
+                       
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
 
             </div>          

@@ -3,8 +3,8 @@
 <head> 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="icon" href="../gambar/sistem/<?php echo $s['logo'] ?>">
-  <title>BUG TRACKER </title>
+  <link rel="icon" href="../gambar/sistem/logo.png">
+  <title>TIKET-ADMIN</title>
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="stylesheet" href="../assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="../assets/bower_components/font-awesome/css/font-awesome.min.css">
@@ -31,6 +31,12 @@
 
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
+
+<!-- notif sound admin -->
+  <audio id="notifSound">
+    <source src="../assets/sound/voice.mp3" type="audio/mpeg">
+  </audio>
+
   <div class="wrapper">
 
     <header class="main-header">
@@ -69,7 +75,7 @@
               ?>
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-globe"></i>
-                <span class="label label-success"><?php echo mysqli_num_rows($pengaduan) ?></span>
+                <span class="label label-danger"><?php echo mysqli_num_rows($pengaduan) ?></span>
               </a>
               <ul class="dropdown-menu">
                 <li class="header">Anda Memiliki <?php echo mysqli_num_rows($pengaduan)  ?> Tiket Layanan</li>

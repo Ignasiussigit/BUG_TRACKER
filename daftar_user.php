@@ -32,7 +32,7 @@
       <div class="login-box-body">
         <br>
         <h4 class="text-center login-box-msg text-bold">
-          DAFTAR LAYANAN HELPDESK
+          DAFTAR BUG TRACKER <br> RS.ST.ELISABETH BEKASI
         </h4>        
 
         <p class="text-bold">DAFTAR USER</p>
@@ -45,11 +45,18 @@
           </div>
           <div class="form-group has-feedback">
             <select class="form-control" name="departemen" required>
-              <option value="">-Pilih Departemen-</option>
-              <option value="IT">IT</option>
-              <option value="ENG">ENG</option>
-              <option value="OFFICE">OFFICE</option>
-              <option value="ETC">ETC</option>
+              <option value="">-Pilih Bagian-</option>
+              <option value="RAJAL-POLI UMUM">RAJAL-POLI UMUM</option>
+              <option value="RAJAL-POLI SPESIALIS">RAJAL-POLI SPESIALIS</option>
+              <option value="RANAP">RANAP</option>
+              <option value="UGD">UGD</option>
+              <option value="LABORATORIUM">LABORATORIUM</option>
+              <option value="RADIOLOGI">RADIOLOGI</option>
+              <option value="FISIOTERAPI">FISIOTERAPI</option>
+              <option value="FARMASI">FARMASI</option>
+              <option value="KEBIDANAN">KEBIDANAN</option>
+              <option value="REKAM MEDIK">REKAM MEDIK</option>
+              <option value="CASEMIX">CASEMIX</option>
             </select>
           </div>
 
