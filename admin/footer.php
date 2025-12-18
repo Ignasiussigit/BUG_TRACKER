@@ -96,31 +96,56 @@ $tahun_ini = date('Y');
   });
 
   
-      let lastTotal = null;
+   let audioUnlocked = false;
   const sound = document.getElementById('notifSound');
 
-    function cekNotif(){
-    $.get('cek_notif.php', function(res){
-      let total = parseInt(res);
+  function unlockAudio(){
+    if(audioUnlocked) return;
 
-      // update badge
-      $('#notif-count').text(total);
-      $('.messages-menu .header')
-        .text('Anda Memiliki ' + total + ' Tiket Layanan');
+    sound.play().then(()=>{
+      sound.pause();
+      sound.currentTime = 0;
+      audioUnlocked = true;
+      console.log('🔓 Audio unlocked');
+    }).catch(()=>{});
+  }
 
-      // load pertama → jangan bunyi
-      if(lastTotal === null){
+  // cukup 1x klik / tekan keyboard
+  document.addEventListener('click', unlockAudio, { once:true });
+  document.addEventListener('keydown', unlockAudio, { once:true });
+
+  /* =============================
+     🔔 NOTIF AJAX
+  ============================== */
+  let lastTotal = null;
+
+  function cekNotif(){
+    $.ajax({
+      url: 'cek_notif.php',
+      type: 'GET',
+      success: function(res){
+
+        let total = parseInt(res);
+
+        // update badge
+        $('.messages-menu .label-danger').text(total);
+        $('.messages-menu .header')
+          .text('Anda Memiliki ' + total + ' Tiket Layanan');
+
+        // load pertama → jangan bunyi
+        if(lastTotal === null){
+          lastTotal = total;
+          return;
+        }
+
+        // tiket baru → bunyi 1x
+        if(total > lastTotal && audioUnlocked){
+          sound.currentTime = 0;
+          sound.play().catch(()=>{});
+        }
+
         lastTotal = total;
-        return;
       }
-
-      // tiket baru → bunyi 1x
-      if(total > lastTotal){
-        sound.currentTime = 0;
-        sound.play().catch(()=>{});
-      }
-
-      lastTotal = total;
     });
   }
 
