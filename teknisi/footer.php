@@ -88,6 +88,36 @@ $tahun_ini = date('Y');
     });
   });
 
+  // fungsinya untuk filter Status (Open,Pending,Progress,Close)
+    $('#filterStatus').on('change', function () {
+    var unit = $(this).val().toLowerCase();
+
+    $('#table-datatable tbody tr').each(function () {
+      var rowUnit = $(this).find('td:eq(8)').text().trim().toLowerCase();
+
+      if (unit === '' || rowUnit === unit) {
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
+    });
+  });
+
+  // fungsinya untuk filter Urgency (High, Medium, Low)
+    $('#filterUrgency').on('change', function () {
+    var unit = $(this).val().toLowerCase();
+
+    $('#table-datatable tbody tr').each(function () {
+      var rowUnit = $(this).find('td:eq(5)').text().trim().toLowerCase();
+
+      if (unit === '' || rowUnit === unit) {
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
+    });
+  });
+
     $('#table-datatable-produk').DataTable({
       'paging'      : true,
       'lengthChange': false,

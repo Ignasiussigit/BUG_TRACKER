@@ -23,9 +23,6 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
     <link href="assets2/css/carousel.css" rel="stylesheet" />
     <!-- <link href="assets2/css/style-hero.css" rel="stylesheet" /> -->
-
-    
-
 </head>
 
 <body class="bg-light">
@@ -37,9 +34,9 @@
     </style>
 
 <style>
-      .hero{
+      /* .hero{
         min-height: 100vh;
-      }
+      } */
 
       .hero .hero-text{
         margin-top: 50px;
@@ -149,14 +146,14 @@
                 <button style="border: 1px solid; font-size:15px; color:white" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> 
                     <span class="navbar-toggler-icon"></span> Menu
                 </button>
-                <a class="nav-link text-white d-lg-none" href="login.php"> <i class="fa fa-sign-in"></i> Login/Masuk</a> 
+                <!-- <a class="nav-link text-white d-lg-none" href="login.php"> <i class="fa fa-sign-in"></i> Login/Masuk</a>  -->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
                    
 
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active d-none  d-lg-block" href="login.php"> <i class="fa fa-sign-in"></i> Login/Masuk</a>
+                            <!-- <a class="nav-link active d-none  d-lg-block" href="login.php"> <i class="fa fa-sign-in"></i> Login/Masuk</a> -->
                         </li>
                     </ul>
 

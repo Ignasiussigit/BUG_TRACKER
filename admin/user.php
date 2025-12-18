@@ -48,10 +48,10 @@
                         <label>Kontak <small style="color:red">*</small></label>
                         <input type="number" name="kontak" required="required" class="form-control" placeholder="kontak ..">
                       </div>
-                      <div class="form-group">
+                      <!-- <div class="form-group">
                         <label>Email <small style="color:red">*</small></label>
                         <input type="email" name="email" required="required" class="form-control" placeholder="email ..">
-                      </div>
+                      </div> -->
                       <div class="form-group">
                         <label>Departemen <small style="color:red">*</small></label>
                         <select class="form-control" name="departemen" required>
@@ -189,7 +189,7 @@
                                 </div>
                                 <div class="form-group" style="width:100%">
                                   <label>Email <small style="color:red">*</small></label>
-                                  <input type="email" name="email" style="width:100%" value="<?php echo $d['user_email'] ?>" required="required" class="form-control" placeholder="email ..">
+                                  <input type="email" name="email" style="width:100%" value="<?php echo $d['user_email'] ?>" class="form-control" placeholder="email ..">
                                 </div>
                                 <div class="form-group" style="width:100%">
                                   <label>Departemen <small style="color:red">*</small></label>

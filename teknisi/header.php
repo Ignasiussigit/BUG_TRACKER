@@ -69,7 +69,7 @@
               ?>
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-globe"></i>
-                <span class="label label-success"><?php echo mysqli_num_rows($pengaduan) ?></span>
+                <span class="label label-danger"><?php echo mysqli_num_rows($pengaduan) ?></span>
               </a>
               <ul class="dropdown-menu">
                 <li class="header">Anda Memiliki <?php echo mysqli_num_rows($pengaduan)  ?> Tiket Layanan</li>

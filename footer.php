@@ -10,8 +10,8 @@
         </div> -->
         <!-- <br> -->
         <br>
-        <nav class=" bg-white border shadow-sm p-3 bawah">
-            <h3 class="text-center m-0 small fw-semibold">&copy; RS.St.Elisabeth Bekasi</a></h3>
+        <nav class=" bg-primer border shadow-sm p-5 bawah">
+            <h2 class="text-center m-0 small fw-semibold" style="font-size: 15px;">&copy; RS.St.Elisabeth Bekasi</a></h2>
         </nav>
     </footer>
 

@@ -35,17 +35,21 @@
 
         <div class="box box-primary">
           <div class="box-body box-profile">
-            <?php 
-            if($d['pengaduan_gambar'] == ""){
-              ?>
-              <img class="img-responsive" src="../gambar/sistem/logo.png" alt="User profile picture">
-              <?php
-            }else{
-             ?>
-             <img class="img-responsive" src="../gambar/tiket/<?php echo $d['pengaduan_gambar'] ?>" alt="User profile picture">
-             <?php
-           }
-           ?>
+
+            <!-- POPUP-IMG -->
+           <?php if($d['pengaduan_gambar'] == ""){ ?>
+              <img class="img-responsive" src="../gambar/sistem/logo.png">
+            <?php } else { ?>
+              <a href="#" data-toggle="modal" data-target="#modalGambar">
+                <img 
+                  class="img-responsive" 
+                  style="cursor:pointer"
+                  src="../gambar/tiket/<?php echo $d['pengaduan_gambar'] ?>"
+                  alt="Klik untuk memperbesar"
+                >
+              </a>
+            <?php } ?>
+            <!-- AKHIR POPUP-IMG -->
 
                     
            <ul class="list-group list-group-unbordered">
@@ -106,12 +110,34 @@
             </li>                     
           </ul>           
         </div>
-
       </div>
-
-
-
     </div>
+
+    <!-- POPUP MODAL IMG -->
+       <?php if($d['pengaduan_gambar'] != ""){ ?>
+          <div class="modal fade" id="modalGambar" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                  </button>
+                  <h5 class="modal-title">Lampiran Tiket</h5>
+                </div>
+
+                <div class="modal-body text-center">
+                  <img 
+                    src="../gambar/tiket/<?php echo $d['pengaduan_gambar'] ?>" 
+                    class="img-responsive"
+                    style="margin:auto; max-height:80vh;">
+                </div>
+              </div>
+            </div>
+          </div>
+          <?php } ?>
+
+      <!-- AKHIR POPUP MODAL IMG -->
 
     <div class="col-md-9">
       <div class="box box-success">      

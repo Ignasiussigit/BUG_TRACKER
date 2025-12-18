@@ -21,10 +21,10 @@
         <div class="box box-success">
 
           <div class="box-header">
-            <h3 class="box-title">Tiket</h3> 
-            
-            <div class="pull-right" style="width:250px">
-              <div class="form-group">
+            <!-- <h3 class="box-title">Tiket</h3>  -->
+
+            <!-- <div class="pull-left" style="width:250px">
+              <div class="form-group" style="display: flex;">
                 <label>Filter Unit</label>
                 <select class="form-control" id="filterUnit">
                   <option value="">Semua Unit</option>
@@ -37,6 +37,50 @@
                   <option value="FARMASI">FARMASI</option>
                   <option value="KEBIDANAN">KEBIDANAN</option>
                   <option value="GIZI">GIZI</option>
+                </select>
+              </div>
+            </div> -->
+            
+            <div class="pull-left" style="width:250px; margin-right:5px;">
+              <div class="form-group">
+                <label>Filter Unit</label>
+                <select class="form-control" id="filterUnit">
+                  <option value="">== Semua Unit ==</option>
+                  <option value="RAJAL-POLI SPESIALIS">RAJAL-POLI SPESIALIS</option>
+                  <option value="RAJAL-POLI UMUM">RAJAL-POLI UMUM</option>
+                  <option value="RANAP">RANAP</option>
+                  <option value="LABORATORIUM">LABORATORIUM</option>
+                  <option value="RADIOLOGI">RADIOLOGI</option>
+                  <option value="FISIOTERAPI">FISIOTERAPI</option>
+                  <option value="FARMASI">FARMASI</option>
+                  <option value="KEBIDANAN">KEBIDANAN</option>
+                  <option value="GIZI">GIZI</option>
+                  <option value="High">High</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="pull-left" style="width:250px; margin-right:5px;">
+              <div class="form-group">
+                <label>Filter Status</label>
+                <select class="form-control" id="filterStatus">
+                  <option value="">== Semua Status ==</option>
+                  <option value="Open">Open</option>
+                  <option value="Pending">Pending</option>
+                  <option value="Progress">Progress</option>
+                  <option value="Close">Close</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="pull-left" style="width:250px">
+              <div class="form-group">
+                <label>Filter Urgency</label>
+                <select class="form-control" id="filterUrgency">
+                  <option value="">== Semua Urgency ==</option>
+                  <option value="High">High</option>
+                  <option value="Medium">Medium</option>
+                  <option value="Low">Low</option>
                 </select>
               </div>
             </div>

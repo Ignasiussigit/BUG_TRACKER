@@ -116,7 +116,7 @@
 
       </div>
 
-      <!-- POPUP NODAL IMG -->
+      <!-- POPUP MODAL IMG -->
        <?php if($d['pengaduan_gambar'] != ""){ ?>
           <div class="modal fade" id="modalGambar" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">

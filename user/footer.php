@@ -17,6 +17,7 @@
 
 <script src="../assets/bower_components/jquery-ui/jquery-ui.min.js"></script>
 
+
 <script>
   $.widget.bridge('uibutton', $.ui.button);
 </script>
@@ -54,6 +55,8 @@
 
 <script src="../assets/dist/js/demo.js"></script>
 <script src="../assets/bower_components/ckeditor/ckeditor.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.js"></script>
 
 
 <?php
@@ -97,6 +100,58 @@ $tahun_ini = date('Y');
       format: 'yyyy/mm/dd',
     });
 
+  });
+
+  // PULGIN SUMMERNOTE
+  
+  // $(document).ready(function() {
+  //   $('#summernote').summernote({
+  //     placeholder: 'jelaskan permasalahannya',
+  //     height: 180,
+  //   });
+  // });
+
+  // $('#summernote').summernote({
+  //       placeholder: 'Jelaskan permasalahan nya',
+  //       tabsize: 2,
+  //       height: 100
+  //     });
+
+  // SUMMERNOTE UNTUK "BUAT TIKET BARU"
+  $(document).ready(function () {
+  $('#summernote').summernote({
+    height: 150,
+    placeholder: 'Jelaskan permasalahan secara detail...',
+    toolbar: [
+      ['style', ['bold', 'italic', 'underline']],
+      ['para', ['ul', 'ol', 'paragraph']],
+      ['insert', ['link','picture']],
+      ['view', ['codeview']]
+    ]
+  });
+});
+
+// menggunakan ini saja ketika didalam 1 codingan harus menuliskan 2 id itu tidak bisa
+  // $('.summernote').summernote({
+  //   height: 180,
+  //   placeholder: 'Jelaskan permasalahan secara detail...',
+  //   toolbar: [
+  //     ['style', ['bold', 'italic', 'underline']],
+  //     ['para', ['ul', 'ol', 'paragraph']],
+  //     ['insert', ['link','Picture']],
+  //     ['view', ['codeview']]
+  //   ]
+  // });
+
+  // SUMMERNOTE UNTUK EDIT TIKET
+  $('.modal').on('shown.bs.modal', function () {
+    $(this).find('.summernote').each(function () {
+      if (!$(this).next('.note-editor').length) {
+        $(this).summernote({
+          height: 150
+        });
+      }
+    });
   });
 
   var randomScalingFactor = function(){ return Math.round(Math.random()*100)};

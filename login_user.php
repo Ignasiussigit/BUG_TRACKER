@@ -35,7 +35,7 @@
         ?>
       </center>
 
-      <div class="login-box-body">
+      <div class="login-box-body" style="border-radius: 15px;">
         <h4 class="text-center login-box-msg text-bold">
           RS.ST.ELISABETH BEKASI
         </h4>     
@@ -67,7 +67,7 @@
           <div class="row">
             <div class="col-lg-12">
               <button type="submit" class="btn btn-primary btn-block"><i class="fa fa-lock"></i> &nbsp; MASUK</button> 
-              <a class="btn btn-success btn-block" href="daftar_user.php"><i class="fa fa-user"></i> &nbsp; DAFTAR</a>            
+              <!-- <a class="btn btn-success btn-block" href="daftar_user.php"><i class="fa fa-user"></i> &nbsp; DAFTAR</a>             -->
               <a class="btn btn-danger btn-block" href="index.php"><i class="fa fa-arrow-left"></i> &nbsp; KEMBALI</a>            
             </div>
           </div>

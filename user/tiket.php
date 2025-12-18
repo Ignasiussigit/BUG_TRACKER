@@ -79,7 +79,7 @@
                       </div>  
                       <div class="form-group">
                         <label>Keterangan <small style="color:red">*</small> </label>
-                        <textarea class="form-control" name="keterangan"></textarea>
+                        <textarea class="form-control" id="summernote" name="keterangan" placeholder="Jelaskan permasalahan-nya ..."></textarea>
                       </div> 
                       <div class="form-group">
                         <label>Gambar </label>
@@ -273,13 +273,12 @@
                                   </div>  
                                   <div class="form-group" style="width:100%">
                                     <label>Keterangan <small style="color:red">*</small> </label>
-                                    <textarea class="form-control" style="width:100%" name="keterangan" placeholder="Keterangan"><?php echo $d['pengaduan_keterangan'] ?></textarea>
+                                    <textarea class="form-control summernote" style="width:100%" name="keterangan" placeholder="Keterangan"><?php echo $d['pengaduan_keterangan'] ?></textarea>
                                   </div>                   
                                   <div class="form-group" style="width:100%">
                                     <label>Gambar </label>
                                     <input type="file" name="gambar" style="width:100%" class="form-control">
                                   </div> 
-
                                 </div>
                                 <div class="modal-footer">
                                   <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>

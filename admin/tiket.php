@@ -159,7 +159,7 @@
                                     </select>
                                   </div>  
                                   <div class="form-group" style="width:100%">
-                                    <label>Email <small style="color:red">*</small> </label>
+                                    <label>Unit <small style="color:red">*</small> </label>
                                     <input type="email" name="email" required="required" value="<?php echo $d['pengaduan_email'] ?>" style="width:100%" placeholder="email@email.com" class="form-control">
                                   </div>
                                   <div class="form-group" style="width:100%">
