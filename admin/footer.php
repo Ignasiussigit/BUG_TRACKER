@@ -110,13 +110,10 @@ $tahun_ini = date('Y');
     }).catch(()=>{});
   }
 
-  // cukup 1x klik / tekan keyboard
+
   document.addEventListener('click', unlockAudio, { once:true });
   document.addEventListener('keydown', unlockAudio, { once:true });
 
-  /* =============================
-     🔔 NOTIF AJAX
-  ============================== */
   let lastTotal = null;
 
   function cekNotif(){
@@ -127,18 +124,15 @@ $tahun_ini = date('Y');
 
         let total = parseInt(res);
 
-        // update badge
         $('.messages-menu .label-danger').text(total);
         $('.messages-menu .header')
           .text('Anda Memiliki ' + total + ' Tiket Layanan');
 
-        // load pertama → jangan bunyi
         if(lastTotal === null){
           lastTotal = total;
           return;
         }
 
-        // tiket baru → bunyi 1x
         if(total > lastTotal && audioUnlocked){
           sound.currentTime = 0;
           sound.play().catch(()=>{});
@@ -148,11 +142,7 @@ $tahun_ini = date('Y');
       }
     });
   }
-
-  // cek pertama kali
   cekNotif();
-
-  // cek tiap 5 detik
   setInterval(cekNotif, 5000);
 
   var randomScalingFactor = function(){ return Math.round(Math.random()*100)};

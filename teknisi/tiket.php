@@ -54,8 +54,8 @@
                   <option value="FISIOTERAPI">FISIOTERAPI</option>
                   <option value="FARMASI">FARMASI</option>
                   <option value="KEBIDANAN">KEBIDANAN</option>
-                  <option value="GIZI">GIZI</option>
-                  <option value="High">High</option>
+                  <!-- <option value="GIZI">GIZI</option> -->
+                  <!-- <option value="CASEMIX">CASEMIX</option> -->
                 </select>
               </div>
             </div>
