@@ -43,6 +43,7 @@
             <input type="text" class="form-control" placeholder="nama" name="nama" required="required" autocomplete="off">
             <span class="glyphicon glyphicon-user form-control-feedback"></span>
           </div>
+
           <div class="form-group has-feedback">
             <select class="form-control" name="departemen" required>
               <option value="">-Pilih Bagian-</option>
@@ -56,6 +57,7 @@
               <option value="KEBIDANAN">KEBIDANAN</option>
               <option value="REKAM MEDIK">REKAM MEDIK</option>
               <option value="OFFICE">OFFICE</option>
+              <!-- <option value="OFFICE">OFFICE</option> -->
             </select>
           </div>
 
