@@ -1,5 +1,5 @@
 <?php 
 
-$koneksi = mysqli_connect("localhost", "root", "" ,"helpdesk_update");
+$koneksi = mysqli_connect("localhost", "root", "" ,"bugtracker");
 
 ?>

@@ -158,14 +158,49 @@
                                       <option <?php if($d['pengaduan_urgency']=="Low"){echo "selected='selected'";} ?> value="Low">Low</option>
                                     </select>
                                   </div>  
-                                  <div class="form-group" style="width:100%">
+                                  <!-- <div class="form-group" style="width:100%">
                                     <label>Unit <small style="color:red">*</small> </label>
                                     <input type="email" name="email" required="required" value="<?php echo $d['pengaduan_email'] ?>" style="width:100%" placeholder="email@email.com" class="form-control">
                                   </div>
                                   <div class="form-group" style="width:100%">
                                     <label>Departemen <small style="color:red">*</small> </label>
                                     <input type="text" name="departemen" required="required" value="<?php echo $d['pengaduan_departemen'] ?>" style="width:100%" placeholder="Ditujukan ke pada bagian (IT,ENG & etc)" class="form-control">
-                                  </div>
+                                  </div> -->
+
+                                  <div class="form-group" style="width:100%">
+                                    <label>Unit-SubUnit <small style="color:red">*</small> </label>
+                                    <br>
+                                    <select class="form-control" style="width:100%" name="email" required>
+                                      <option value="">-pilih-</option>
+                                      <option <?php if($d['pengaduan_email']=="RAJAL-POLI SPESIALIS"){echo "selected='selected'";} ?> value="RAJAL-POLI SPESIALIS">RAJAL-POLI SPESIALIS</option>
+                                      <option <?php if($d['pengaduan_email']=="RAJAL-POLI UMUM"){echo "selected='selected'";} ?> value="RAJAL-POLI UMUM">RAJAL-POLI UMUM</option>
+                                      <option <?php if($d['pengaduan_email']=="RANAP"){echo "selected='selected'";} ?> value="RANAP">RANAP</option>
+                                      <option <?php if($d['pengaduan_email']=="LABORATORIUM"){echo "selected='selected'";} ?> value="LABORATORIUM">LABORATORIUM</option>
+                                      <option <?php if($d['pengaduan_email']=="RADIOLOGI"){echo "selected='selected'";} ?> value="RADIOLOGI">RADIOLOGI</option>
+                                      <option <?php if($d['pengaduan_email']=="FISOTERAPI"){echo "selected='selected'";} ?> value="FISOTERAPI">FISOTERAPI</option>
+                                      <option <?php if($d['pengaduan_email']=="FARMASI"){echo "selected='selected'";} ?> value="FARMASI">FARMASI</option>
+                                      <option <?php if($d['pengaduan_email']=="KEBIDANAN"){echo "selected='selected'";} ?> value="KEBIDANAN">KEBIDANAN</option>
+                                      <option <?php if($d['pengaduan_email']=="GIZI"){echo "selected='selected'";} ?> value="GIZI">GIZI</option>
+                                    </select>
+                                  </div>  
+                                  <!-- <div class="form-group" style="width:100%">
+                                    <label>Email <small style="color:red">*</small> </label>
+                                    <input type="email" name="email" required="required" value="<?php echo $d['pengaduan_email'] ?>" style="width:100%" placeholder="email@email.com" class="form-control">
+                                  </div> -->
+
+                                  <!-- <div class="form-group" style="width:100%">
+                                    <label>Departemen <small style="color:red">*</small> </label>
+                                    <input type="text" name="departemen" required="required" value="<?php echo $d['pengaduan_departemen'] ?>" style="width:100%" placeholder="Ditujukan ke pada bagian (IT,ENG & etc)" class="form-control">
+                                  </div> -->
+
+                                  <div class="form-group" style="width:100%">
+                                    <label>Departemen <small style="color:red">*</small> </label>
+                                    <br>
+                                    <select class="form-control" style="width:100%" name="departemen" required>
+                                      <option value="">-pilih-</option>
+                                      <option <?php if($d['pengaduan_departemen']=="SIMRS"){echo "selected='selected'";} ?> style="width:100%" value="SIMRS">SIMRS</option>
+                                    </select>
+                                  </div>  
 
                                   <div class="form-group" style="width:100%">
                                     <label>Judul <small style="color:red">*</small> </label>
@@ -174,7 +209,7 @@
                                   </div>  
                                   <div class="form-group" style="width:100%">
                                     <label>Keterangan <small style="color:red">*</small> </label>
-                                    <textarea class="form-control" style="width:100%" name="keterangan" placeholder="Keterangan"><?php echo $d['pengaduan_keterangan'] ?></textarea>
+                                    <textarea class="form-control summernote" style="width:100%" name="keterangan" placeholder="Keterangan"><?php echo $d['pengaduan_keterangan'] ?></textarea>
                                   </div>                   
                                   <div class="form-group" style="width:100%">
                                     <label>Gambar </label>

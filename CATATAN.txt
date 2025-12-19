@@ -1,12 +1,23 @@
 AKUN :
-1.ADMIN
+1.ADMIN/DEV
 	username : admin
 	password : admin
 
-2. TEKNISI
+2. DEV
 	username : teknisi
 	password : teknisi
 
+	username : arifin
+	password : 123
+
+	username : eko
+	password : 123
+
+3. USER
+	username : sigit
+	password : 123 
+
+======================================================
 halaman Dhasboard:
 http://localhost/BUG_TRACKER/
 
@@ -17,18 +28,3 @@ http://localhost/BUG_TRACKER/daftar_user.php
 
 halaman Login Admin dan Teknisi
 http://localhost/BUG_TRACKER/login.php
-
-akun admin:
-username = admin
-pw	 = admin
-
-teknisi/dev:
-username = arifin
-pw	 = 123
-
-username = eko
-pw	 = 123
-
-akun user:
-username = sigit
-pw	 = 123

@@ -46,8 +46,7 @@
           <div class="form-group has-feedback">
             <select class="form-control" name="departemen" required>
               <option value="">-Pilih Bagian-</option>
-              <option value="RAJAL-POLI UMUM">RAJAL-POLI UMUM</option>
-              <option value="RAJAL-POLI SPESIALIS">RAJAL-POLI SPESIALIS</option>
+              <option value="POLI RAJAL">POLI RAJAL</option>
               <option value="RANAP">RANAP</option>
               <option value="UGD">UGD</option>
               <option value="LABORATORIUM">LABORATORIUM</option>
@@ -56,7 +55,7 @@
               <option value="FARMASI">FARMASI</option>
               <option value="KEBIDANAN">KEBIDANAN</option>
               <option value="REKAM MEDIK">REKAM MEDIK</option>
-              <option value="CASEMIX">CASEMIX</option>
+              <option value="OFFICE">OFFICE</option>
             </select>
           </div>
 

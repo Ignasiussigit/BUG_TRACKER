@@ -70,10 +70,18 @@
                         <label>Email <small style="color:red">*</small> </label>
                         <input type="email" name="email" required="required" placeholder="email@email.com" class="form-control">
                       </div> -->
-                      <div class="form-group">
+
+                      <!-- <div class="form-group">
                         <label>Departemen <small style="color:red">*</small> </label>
                         <input type="text" name="departemen" required="required" placeholder="Ditujukan ke pada bagian (SIMRS)" class="form-control">
-                      </div>
+                      </div> -->
+                      <div class="form-group">
+                        <label>Departemen <small style="color:red">*</small> </label>
+                        <select class="form-control" name="departement" required>
+                          <option value="">-pilih-</option>
+                          <option value="SIMRS">SIMRS</option>
+                        </select>
+                      </div>  
                       <div class="form-group">
                         <label>Judul <small style="color:red">*</small> </label>
                         <input type="text" name="judul" required="required" placeholder="Judul Tiket" class="form-control">
@@ -302,10 +310,20 @@
                                     <label>Email <small style="color:red">*</small> </label>
                                     <input type="email" name="email" required="required" value="<?php echo $d['pengaduan_email'] ?>" style="width:100%" placeholder="email@email.com" class="form-control">
                                   </div> -->
-                                  <div class="form-group" style="width:100%">
+
+                                  <!-- <div class="form-group" style="width:100%">
                                     <label>Departemen <small style="color:red">*</small> </label>
                                     <input type="text" name="departemen" required="required" value="<?php echo $d['pengaduan_departemen'] ?>" style="width:100%" placeholder="Ditujukan ke pada bagian (IT,ENG & etc)" class="form-control">
-                                  </div>
+                                  </div> -->
+
+                                  <div class="form-group">
+                                    <label>Departemen <small style="color:red">*</small> </label>
+                                    <br>
+                                    <select class="form-control" name="departemen" required>
+                                      <option value="">-pilih-</option>
+                                      <option <?php if($d['pengaduan_departemen']=="SIMRS"){echo "selected='selected'";} ?> style="width:100%" value="SIMRS">SIMRS</option>
+                                    </select>
+                                  </div>  
 
                                   <div class="form-group" style="width:100%">
                                     <label>Judul <small style="color:red">*</small> </label>

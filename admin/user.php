@@ -52,14 +52,21 @@
                         <label>Email <small style="color:red">*</small></label>
                         <input type="email" name="email" required="required" class="form-control" placeholder="email ..">
                       </div> -->
-                      <div class="form-group">
-                        <label>Departemen <small style="color:red">*</small></label>
+
+                      <div class="form-group has-feedback">
+                        <label>Unit <small style="color:red">*</small></label>
                         <select class="form-control" name="departemen" required>
-                          <option value="">-pilih-</option>
-                          <option value="IT">IT</option>
-                          <option value="ENG">ENG</option>
+                          <option value="">-Pilih Bagian-</option>
+                          <option value="POLI RAJAL">POLI RAJAL</option>
+                          <option value="RANAP">RANAP</option>
+                          <option value="UGD">UGD</option>
+                          <option value="LABORATORIUM">LABORATORIUM</option>
+                          <option value="RADIOLOGI">RADIOLOGI</option>
+                          <option value="FISIOTERAPI">FISIOTERAPI</option>
+                          <option value="FARMASI">FARMASI</option>
+                          <option value="KEBIDANAN">KEBIDANAN</option>
+                          <option value="REKAM MEDIK">REKAM MEDIK</option>
                           <option value="OFFICE">OFFICE</option>
-                          <option value="ETC">ETC</option>
                         </select>
                       </div>
 
@@ -185,23 +192,28 @@
 
                                 <div class="form-group" style="width:100%">
                                   <label>Kontak <small style="color:red">*</small></label>
-                                  <input type="number" name="kontak" value="<?php echo $d['user_kontak'] ?>" required="required" style="width:100%" class="form-control" placeholder="kontak ..">
+                                  <input type="number" name="kontak" value="<?php echo $d['user_kontak'] ?>"  style="width:100%" class="form-control" placeholder="kontak ..">
                                 </div>
-                                <div class="form-group" style="width:100%">
+                                <!-- <div class="form-group" style="width:100%">
                                   <label>Email <small style="color:red">*</small></label>
                                   <input type="email" name="email" style="width:100%" value="<?php echo $d['user_email'] ?>" class="form-control" placeholder="email ..">
-                                </div>
+                                </div> -->
                                 <div class="form-group" style="width:100%">
                                   <label>Departemen <small style="color:red">*</small></label>
                                   <select class="form-control" style="width:100%" name="departemen" required>
                                     <option value="">-pilih-</option>
-                                    <option <?php if($d['user_departemen']=="IT"){echo "selected='selected'";} ?> value="IT">IT</option>
-                                    <option <?php if($d['user_departemen']=="ENG"){echo "selected='selected'";} ?> value="ENG">ENG</option>
+                                    <option <?php if($d['user_departemen']=="POLI RAJAL"){echo "selected='selected'";} ?> value="POLI RAJAL">POLI RAJAL</option>
+                                    <option <?php if($d['user_departemen']=="RANAP"){echo "selected='selected'";} ?> value="RANAP">RANAP</option>
+                                    <option <?php if($d['user_departemen']=="UGD"){echo "selected='selected'";} ?> value="UGD">UGD</option>
+                                    <option <?php if($d['user_departemen']=="LABORATORIUM"){echo "selected='selected'";} ?> value="LABORATORIUM">LABORATORIUM</option>
+                                    <option <?php if($d['user_departemen']=="RADIOLOGI"){echo "selected='selected'";} ?> value="RADIOLOGI">RADIOLOGI</option>
+                                    <option <?php if($d['user_departemen']=="FISIOTERAPI"){echo "selected='selected'";} ?> value="FISIOTERAPI">FISIOTERAPI</option>
+                                    <option <?php if($d['user_departemen']=="FARMASI"){echo "selected='selected'";} ?> value="FARMASI">FARMASI</option>
+                                    <option <?php if($d['user_departemen']=="KEBIDANAN"){echo "selected='selected'";} ?> value="KEBIDANAN">KEBIDANAN</option>
+                                    <option <?php if($d['user_departemen']=="REKAM MEDIK"){echo "selected='selected'";} ?> value="REKAM MEDIK">REKAM MEDIK</option>
                                     <option <?php if($d['user_departemen']=="OFFICE"){echo "selected='selected'";} ?> value="OFFICE">OFFICE</option>
-                                    <option <?php if($d['user_departemen']=="ETC"){echo "selected='selected'";} ?> value="ETC">ETC</option>
                                   </select>
                                 </div>
-
 
                                 <div class="form-group" style="width:100%">
                                   <label>Username <small style="color:red">*</small></label>

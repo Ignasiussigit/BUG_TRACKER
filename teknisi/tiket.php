@@ -103,7 +103,7 @@
                     <th>JUDUL</th>
                     <th>UNIT</th>    
                     <th>STATUS </th>                
-                    <th width="1%">UPDATE</th>
+                    <th width="12%">UPDATE</th>
                     <th>&nbsp;</th>                                    
                   </tr>
                 </thead>
