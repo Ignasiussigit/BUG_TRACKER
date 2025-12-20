@@ -36,8 +36,8 @@
 
     <header class="main-header">
       <a href="index.php" class="logo">
-        <span class="logo-mini"><b>BUG TRACKER </b> </span>
-        <span class="logo-lg"><b>BUG TRACKER </b></span>
+        <span class="logo-mini"><b>IT Helpdesk </b> </span>
+        <span class="logo-lg"><b>IT Helpdesk </b></span>
       </a>
       <nav class="navbar navbar-static-top">
         <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">

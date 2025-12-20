@@ -77,7 +77,7 @@
                       </div> -->
                       <div class="form-group">
                         <label>Departemen <small style="color:red">*</small> </label>
-                        <select class="form-control" name="departement" required>
+                        <select class="form-control" name="departemen" required>
                           <option value="">-pilih-</option>
                           <option value="SIMRS">SIMRS</option>
                         </select>
