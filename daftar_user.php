@@ -47,17 +47,28 @@
           <div class="form-group has-feedback">
             <select class="form-control" name="departemen" required>
               <option value="">-Pilih Bagian-</option>
-              <option value="POLI RAJAL">POLI RAJAL</option>
-              <option value="RANAP">RANAP</option>
-              <option value="UGD">UGD</option>
-              <option value="LABORATORIUM">LABORATORIUM</option>
-              <option value="RADIOLOGI">RADIOLOGI</option>
-              <option value="FISIOTERAPI">FISIOTERAPI</option>
-              <option value="FARMASI">FARMASI</option>
-              <option value="KEBIDANAN">KEBIDANAN</option>
-              <option value="REKAM MEDIK">REKAM MEDIK</option>
-              <option value="OFFICE">OFFICE</option>
-              <!-- <option value="OFFICE">OFFICE</option> -->
+                          <option value="POLI RAJAL">POLI RAJAL</option>
+                          <option value="RANAP">RANAP</option>
+                          <option value="UGD">UGD</option>
+                          <option value="LABORATORIUM">LABORATORIUM</option>
+                          <option value="RADIOLOGI">RADIOLOGI</option>
+                          <option value="FISIOTERAPI">FISIOTERAPI</option>
+                          <option value="FARMASI">FARMASI</option>
+                          <option value="KEBIDANAN">KEBIDANAN</option>
+                          <option value="MCU">MCU</option>
+                          <option value="PERSONALIA">PERSONALIA</option>
+                          <option value="SEKRETARIAT">SEKRETARIAT</option>
+                          <option value="MARKETING">MARKETING</option>
+                          <option value="REKAM MEDIK">REKAM MEDIK</option>
+                          <option value="CASEMIX">CASEMIX</option>
+                          <option value="PIUTANG">PIUTANG</option>
+                          <option value="PAJAK">PAJAK</option>
+                          <option value="AKUNTANSI">AKUNTANSI</option>
+                          <option value="KEUANGAN">KEUANGAN</option>
+                          <option value="ADMINISTRASI">ADMINISTRASI</option>
+                          <option value="KASIR">KASIR</option>
+                          <option value="OFFICE">OFFICE</option>
+                          <option value="PETUGAS-UMUM">PETUGAS-UMUM</option>
             </select>
           </div>
 
