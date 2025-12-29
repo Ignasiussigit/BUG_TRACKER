@@ -73,6 +73,57 @@ $tahun_ini = date('Y');
       "pageLength": 50
     });
 
+  // untuk menampilkan notifikasi suara pada teknisi
+  let audioUnlocked = false;
+  const sound = document.getElementById('notifSound');
+
+  function unlockAudio(){
+    if(audioUnlocked) return;
+
+    sound.play().then(()=>{
+      sound.pause();
+      sound.currentTime = 0;
+      audioUnlocked = true;
+      console.log('🔓 Audio unlocked');
+    }).catch(()=>{});
+  }
+
+
+  document.addEventListener('click', unlockAudio, { once:true });
+  document.addEventListener('keydown', unlockAudio, { once:true });
+
+  let lastTotal = null;
+
+  function cekNotif(){
+    $.ajax({
+      url: 'cek_notif.php',
+      type: 'GET',
+      success: function(res){
+
+        let total = parseInt(res);
+
+        $('.messages-menu .label-danger').text(total);
+        $('.messages-menu .header')
+          .text('Anda Memiliki ' + total + ' Tiket Layanan');
+
+        if(lastTotal === null){
+          lastTotal = total;
+          return;
+        }
+
+        if(total > lastTotal && audioUnlocked){
+          sound.currentTime = 0;
+          sound.play().catch(()=>{});
+        }
+
+        lastTotal = total;
+      }
+    });
+  }
+  cekNotif();
+  setInterval(cekNotif, 5000);
+  // akhir notifikasi suara pada teknisi
+  
 // fungsinya untuk filter unit pada tabel tiket teknisi
     $('#filterUnit').on('change', function () {
     var unit = $(this).val().toLowerCase();

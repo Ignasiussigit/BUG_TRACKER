@@ -31,6 +31,13 @@
 
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
+
+<!-- notif teknisi -->
+   <audio id="notifSound" preload="auto">
+    <source src="../assets/sound/voice.mp3" type="audio/mpeg">
+  </audio>
+<!-- akhir notif teknisi -->
+ 
   <div class="wrapper">
 
     <header class="main-header">
