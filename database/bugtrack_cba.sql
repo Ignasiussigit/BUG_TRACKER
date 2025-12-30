@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Dec 30, 2025 at 04:14 PM
+-- Generation Time: Dec 30, 2025 at 05:47 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -74,13 +74,10 @@ CREATE TABLE `pengaduan` (
 --
 
 INSERT INTO `pengaduan` (`pengaduan_id`, `pengaduan_user`, `pengaduan_nomor`, `pengaduan_tanggal`, `pengaduan_judul`, `pengaduan_keterangan`, `pengaduan_urgency`, `pengaduan_email`, `pengaduan_departemen`, `pengaduan_gambar`, `pengaduan_status`, `pengaduan_keterangan_selesai`, `pengaduan_tanggal_penyelesaian`, `pengaduan_teknisi`) VALUES
-(1, 1392, '202512301', '2025-12-28 15:04:39', 'coba PRAM 1', '<p>sdsds</p>', 'Medium', 'IGD', 'SIMRS', NULL, 'Close', 'sudah yaa...', '2025-12-30 21:35:37', 8),
-(2, 1001, '202512302', '2025-12-30 18:25:35', 'test lagi by pram', '<p>testtt brouuuu</p>', 'Medium', 'OK', 'SIMRS', NULL, 'Close', 'done....', '2025-12-30 21:35:06', 6),
-(3, 101, '202512303', '2025-12-30 18:54:28', 'TAMBAHKAN JAM', '<p>tolong tambahkan jam di atas inputan</p>', 'Medium', 'ADMINISTRASI', 'SIMRS', NULL, 'Open', NULL, NULL, NULL),
+(3, 101, '202512303', '2025-12-25 18:54:28', 'TAMBAHKAN JAM', '<p>tolong tambahkan jam di atas inputan</p>', 'Medium', 'ADMINISTRASI', 'SIMRS', NULL, 'Close', 'Silahkan di cek ', '2025-12-31 00:23:12', 8),
 (4, 101, '202512304', '2025-12-30 19:08:31', 'CONTOOH LINK', '<p><a href=\"https://drive.google.com/drive/folders/1-8D7Ilf0y_PNr982Lb5Cm7rGacWWjpbb?usp=sharing\" target=\"_blank\">https://drive.google.com/drive/folders/1-8D7Ilf0y_PNr982Lb5Cm7rGacWWjpbb?usp=sharing</a><br></p>', 'Medium', 'ADMINISTRASI', 'SIMRS', NULL, 'Open', NULL, NULL, NULL),
 (5, 811, '202512305', '2025-12-30 20:11:04', 'TAMBAHKAN FITUR RAJAL', '<p>tolong tambahkan button print&nbsp;</p>', 'Medium', 'RAJAL-POLI UMUM', 'SIMRS', NULL, 'Close', 'Baik, sudah selesai, silahkan di cek', '2025-12-30 21:33:16', 6),
-(6, 811, '202512306', '2025-12-30 21:37:38', 'assesment dokter tidak keluar', '<p>ketika masuk sebagai perawat data assesment dokternya tidak muncul, berada di modul 5.3.2</p>', 'Medium', 'RAJAL-POLI UMUM', 'SIMRS', NULL, 'Close', '-', '2025-12-30 21:41:52', 8),
-(7, 1392, '202512307', '2025-12-30 22:48:14', 'Coba lagi boii', '<p>Testtyy</p>', 'Medium', 'BAGIAN-UMUN', 'SIMRS', NULL, 'Open', NULL, NULL, NULL);
+(6, 811, '202512306', '2025-12-30 21:37:38', 'assesment dokter tidak keluar', '<p>ketika masuk sebagai perawat data assesment dokternya tidak muncul, berada di modul 5.3.2</p>', 'Medium', 'RAJAL-POLI UMUM', 'SIMRS', NULL, 'Close', '-', '2025-12-30 21:41:52', 8);
 
 -- --------------------------------------------------------
 
@@ -104,8 +101,6 @@ CREATE TABLE `pengaduan_chat` (
 INSERT INTO `pengaduan_chat` (`pc_id`, `pc_pengaduan`, `pc_user`, `pc_waktu`, `pc_isi`, `pc_level`) VALUES
 (4, 8, 6, '2025-12-20 02:07:55', 'baik, mohon di tunggu', 'Teknisi'),
 (5, 9, 1, '2025-12-20 07:07:31', 'segera di perbaiki', 'User'),
-(6, 10, 1, '2025-12-23 09:37:16', 'haii', 'User'),
-(7, 11, 1, '2025-12-23 10:57:36', 'segera di selesaikan', 'User'),
 (8, 12, 1, '2025-12-23 11:05:36', 'TOLONG PAK', 'User'),
 (9, 17, 8, '2025-12-29 11:08:47', 'di tunggu yaaa', 'Teknisi'),
 (10, 17, 1392, '2025-12-29 11:10:06', 'baik pak', 'User'),
@@ -113,9 +108,7 @@ INSERT INTO `pengaduan_chat` (`pc_id`, `pc_pengaduan`, `pc_user`, `pc_waktu`, `p
 (12, 20, 184, '2025-12-29 11:21:31', 'tolong bangettt ya pakk', 'User'),
 (13, 20, 8, '2025-12-29 11:23:37', 'syappp bapak victor', 'Teknisi'),
 (15, 4, 6, '2025-12-30 10:33:22', 'okeeeee.....', 'Teknisi'),
-(16, 7, 6, '2025-12-30 10:42:40', 'siyap  di tunggu yaww', 'Teknisi'),
-(17, 3, 101, '2025-12-30 18:56:12', 'tolong di buat ya pakk, ini sangat penting untuk saya', 'User'),
-(18, 1, 1392, '2025-12-30 22:44:44', 'Terimakasih pak eko ', 'User');
+(17, 3, 101, '2025-12-30 18:56:12', 'tolong di buat ya pakk, ini sangat penting untuk saya', 'User');
 
 -- --------------------------------------------------------
 
@@ -1421,7 +1414,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `pengaduan`
 --
 ALTER TABLE `pengaduan`
-  MODIFY `pengaduan_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `pengaduan_id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `pengaduan_chat`
