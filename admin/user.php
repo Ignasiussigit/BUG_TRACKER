@@ -46,7 +46,7 @@
                      
                        <div class="form-group">
                         <label>Kontak <small style="color:red">*</small></label>
-                        <input type="number" name="kontak" required="required" class="form-control" placeholder="kontak ..">
+                        <input type="number" name="kontak"  class="form-control" placeholder="kontak ..">
                       </div>
                       <!-- <div class="form-group">
                         <label>Email <small style="color:red">*</small></label>
@@ -60,24 +60,31 @@
                           <option value="POLI RAJAL">POLI RAJAL</option>
                           <option value="RANAP">RANAP</option>
                           <option value="UGD">UGD</option>
+                          <option value="OK">OK</option>
+                          <option value="ICU">ICU</option>
                           <option value="LABORATORIUM">LABORATORIUM</option>
                           <option value="RADIOLOGI">RADIOLOGI</option>
-                          <option value="FISIOTERAPI">FISIOTERAPI</option>
+                          <option value="REHAB MEDIS">REHAB MEDIS</option>
                           <option value="FARMASI">FARMASI</option>
                           <option value="KEBIDANAN">KEBIDANAN</option>
                           <option value="MCU">MCU</option>
+                          <option value="PELAYANAN MEDIK">PELAYANAN MEDIK</option>
                           <option value="PERSONALIA">PERSONALIA</option>
                           <option value="SEKRETARIAT">SEKRETARIAT</option>
+                          <option value="SIM">SIM</option>
                           <option value="MARKETING">MARKETING</option>
-                          <option value="REKAM MEDIK">REKAM MEDIK</option>
+                          <option value="REKAM MEDIS">REKAM MEDIS</option>
                           <option value="CASEMIX">CASEMIX</option>
                           <option value="PIUTANG">PIUTANG</option>
                           <option value="PAJAK">PAJAK</option>
                           <option value="AKUNTANSI">AKUNTANSI</option>
                           <option value="KEUANGAN">KEUANGAN</option>
+                          <option value="KABAG.ADMINISTRASI">KABAG.ADMINISTRASI</option>
                           <option value="ADMINISTRASI">ADMINISTRASI</option>
                           <option value="KASIR">KASIR</option>
+                          <option value="TPP">TPP</option>
                           <option value="OFFICE">OFFICE</option>
+                          <option value="GIZI">GIZI</option>
                           <option value="PETUGAS-UMUM">PETUGAS-UMUM</option>
                         </select>
                       </div>
@@ -114,7 +121,8 @@
               <thead>
                 <tr>
                   <th width="1%">NO</th>    
-                  <th></th>                                  
+                  <th></th>
+                  <th>USER_ID</th>                                  
                   <th>NAMA</th>                  
                   <th>EMAIL</th>                  
                   <th>DEPARTEMEN</th>                  
@@ -141,6 +149,7 @@
                         <?php } ?>
                       </center>
                     </td>
+                    <td><?php echo $d['user_id']; ?></td>
                     <td><?php echo $d['user_nama']; ?></td>
                     <td><?php echo $d['user_email']; ?></td>
                     <td><?php echo $d['user_departemen']; ?></td>
@@ -217,13 +226,32 @@
                                     <option <?php if($d['user_departemen']=="POLI RAJAL"){echo "selected='selected'";} ?> value="POLI RAJAL">POLI RAJAL</option>
                                     <option <?php if($d['user_departemen']=="RANAP"){echo "selected='selected'";} ?> value="RANAP">RANAP</option>
                                     <option <?php if($d['user_departemen']=="UGD"){echo "selected='selected'";} ?> value="UGD">UGD</option>
+                                    <option <?php if($d['user_departemen']=="OK"){echo "selected='selected'";} ?> value="OK">OK</option>
+                                    <option <?php if($d['user_departemen']=="ICU"){echo "selected='selected'";} ?> value="ICU">ICU</option>
                                     <option <?php if($d['user_departemen']=="LABORATORIUM"){echo "selected='selected'";} ?> value="LABORATORIUM">LABORATORIUM</option>
                                     <option <?php if($d['user_departemen']=="RADIOLOGI"){echo "selected='selected'";} ?> value="RADIOLOGI">RADIOLOGI</option>
-                                    <option <?php if($d['user_departemen']=="FISIOTERAPI"){echo "selected='selected'";} ?> value="FISIOTERAPI">FISIOTERAPI</option>
+                                    <option <?php if($d['user_departemen']=="REHAB MEDIS"){echo "selected='selected'";} ?> value="REHAB MEDIS">REHAB MEDIS</option>
                                     <option <?php if($d['user_departemen']=="FARMASI"){echo "selected='selected'";} ?> value="FARMASI">FARMASI</option>
                                     <option <?php if($d['user_departemen']=="KEBIDANAN"){echo "selected='selected'";} ?> value="KEBIDANAN">KEBIDANAN</option>
-                                    <option <?php if($d['user_departemen']=="REKAM MEDIK"){echo "selected='selected'";} ?> value="REKAM MEDIK">REKAM MEDIK</option>
+                                    <option <?php if($d['user_departemen']=="MCU"){echo "selected='selected'";} ?> value="MCU">MCU</option>
+                                    <option <?php if($d['user_departemen']=="PELAYANAN MEDIK"){echo "selected='selected'";} ?> value="PELAYANAN MEDIK">PELAYANAN MEDIK</option>
+                                    <option <?php if($d['user_departemen']=="PERSONALIA"){echo "selected='selected'";} ?> value="PERSONALIA">PERSONALIA</option>
+                                    <option <?php if($d['user_departemen']=="SEKRETARIAT"){echo "selected='selected'";} ?> value="SEKRETARIAT">SEKRETARIAT</option>
+                                    <option <?php if($d['user_departemen']=="SIM"){echo "selected='selected'";} ?> value="SIM">SIM</option>
+                                    <option <?php if($d['user_departemen']=="MARKETING"){echo "selected='selected'";} ?> value="MARKETING">MARKETING</option>
+                                    <option <?php if($d['user_departemen']=="REKAM MEDIS"){echo "selected='selected'";} ?> value="REKAM MEDIS">REKAM MEDIS</option>
+                                    <option <?php if($d['user_departemen']=="CASEMIX"){echo "selected='selected'";} ?> value="CASEMIX">CASEMIX</option>
+                                    <option <?php if($d['user_departemen']=="PIUTANG"){echo "selected='selected'";} ?> value="PIUTANG">PIUTANG</option>
+                                    <option <?php if($d['user_departemen']=="PAJAK"){echo "selected='selected'";} ?> value="PAJAK">PAJAK</option>
+                                    <option <?php if($d['user_departemen']=="AKUNTANSI"){echo "selected='selected'";} ?> value="AKUNTANSI">AKUNTANSI</option>
+                                    <option <?php if($d['user_departemen']=="KEUANGAN"){echo "selected='selected'";} ?> value="KEUANGAN">KEUANGAN</option>
+                                    <option <?php if($d['user_departemen']=="KABAG.ADMINISTRASI"){echo "selected='selected'";} ?> value="KABAG.ADMINISTRASI">KABAG.ADMINISTRASI</option>
+                                    <option <?php if($d['user_departemen']=="ADMINISTRASI"){echo "selected='selected'";} ?> value="ADMINISTRASI">ADMINISTRASI</option>
+                                    <option <?php if($d['user_departemen']=="KASIR"){echo "selected='selected'";} ?> value="KASIR">KASIR</option>
+                                    <option <?php if($d['user_departemen']=="TPP"){echo "selected='selected'";} ?> value="TPP">TPP</option>
                                     <option <?php if($d['user_departemen']=="OFFICE"){echo "selected='selected'";} ?> value="OFFICE">OFFICE</option>
+                                    <option <?php if($d['user_departemen']=="GIZI"){echo "selected='selected'";} ?> value="GIZI">GIZI</option>
+                                    <option <?php if($d['user_departemen']=="PETUGAS-UMUM"){echo "selected='selected'";} ?> value="PETUGAS-UMUM">PETUGAS-UMUM</option>
                                   </select>
                                 </div>
 

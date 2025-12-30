@@ -46,16 +46,23 @@
                 <label>Filter Unit</label>
                 <select class="form-control" id="filterUnit">
                   <option value="">== Semua Unit ==</option>
-                  <option value="RAJAL-POLI SPESIALIS">RAJAL-POLI SPESIALIS</option>
-                  <option value="RAJAL-POLI UMUM">RAJAL-POLI UMUM</option>
-                  <option value="RANAP">RANAP</option>
-                  <option value="LABORATORIUM">LABORATORIUM</option>
-                  <option value="RADIOLOGI">RADIOLOGI</option>
-                  <option value="FISIOTERAPI">FISIOTERAPI</option>
-                  <option value="FARMASI">FARMASI</option>
-                  <option value="KEBIDANAN">KEBIDANAN</option>
-                  <!-- <option value="GIZI">GIZI</option> -->
-                  <!-- <option value="CASEMIX">CASEMIX</option> -->
+                        <option value="RAJAL-POLI SPESIALIS">RAJAL-POLI SPESIALIS</option>
+                          <option value="RAJAL-POLI UMUM">RAJAL-POLI UMUM</option>
+                          <option value="RANAP">RANAP</option>
+                          <option value="IGD">IGD</option>
+                          <option value="OK">OK</option>
+                          <option value="HD">HD</option>
+                          <option value="LABORATORIUM">LABORATORIUM</option>
+                          <option value="RADIOLOGI">RADIOLOGI</option>
+                          <option value="FISIOTERAPI">FISOTERAPI</option>
+                          <option value="FARMASI">FARMASI</option>
+                          <option value="KEBIDANAN">KEBIDANAN</option>
+                          <option value="KEUANGAN">KEUANGAN</option>
+                          <option value="ADMINISTRASI">ADMINISTRASI</option>
+                          <option value="BAGIAN-UMUN">BAGIAN-UMUN</option>
+                          <option value="CASEMIX">CASEMIX</option>
+                          <option value="REKAM-MEDIK">REKAM-MEDIK</option>
+                          <option value="GIZI">GIZI</option>
                 </select>
               </div>
             </div>

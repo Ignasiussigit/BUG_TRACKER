@@ -4,7 +4,7 @@
 	
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Helpdesk</title>	
+	<title>Laporan_Helpdesk</title>	
 	<link rel="stylesheet" href="../assets/bower_components/bootstrap/dist/css/bootstrap.min.css">	
 
 </head>
@@ -34,6 +34,7 @@
 				<th>JUDUL</th>                                        
 				<th>STATUS</th>
 				<th>TINDAKAN</th>
+				<th>RESPON TIME</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -94,11 +95,42 @@
 					</td> 
 					<td><?php echo $d['pengaduan_keterangan_selesai'] ?></td>
 
+					<!-- tambahan kolom respon time -->
+					<td>
+						<?php
+						if (!empty($d['pengaduan_tanggal_penyelesaian'])) {
+							$tgl_pengajuan = new DateTime($d['pengaduan_tanggal']);
+							$tgl_selesai   = new DateTime($d['pengaduan_tanggal_penyelesaian']);
+							
+							if ($tgl_selesai >= $tgl_pengajuan) {
+								$diff = $tgl_pengajuan->diff($tgl_selesai);
+								
+								$hari = $diff->days;      // total hari penuh
+								$jam  = $diff->h;         // jam (0–23)
+								$menit = $diff->i;        // menit (0–59)
+								
+								// fungsinya untk menampilkan hanya komponen yang > 0, atau tampilkan 0 kalau semuanya 0
+								if ($hari == 0 && $jam == 0 && $menit == 0) {
+									echo "0 menit";
+								} else {
+									$parts = [];
+									if ($hari > 0) $parts[] = $hari . " hari";
+									if ($jam > 0)  $parts[] = $jam . " jam";
+									if ($menit > 0) $parts[] = $menit . " menit";
+									
+									echo implode(", ", $parts);
+								}
+							} else {
+								echo "-";
+							}
+						} else {
+							echo "-";
+						}
+						?>
+					</td>
 
 				</tr>
 				<?php
-
-
 			}
 			?>
 		</tbody> 

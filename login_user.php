@@ -54,7 +54,7 @@
         <form action="login_user_act.php" method="POST">
 
           <div class="form-group has-feedback">
-            <input type="text" class="form-control" placeholder="Username" name="username" required="required" autocomplete="off">
+            <input type="text" class="form-control" placeholder="Username / userid" name="username" required="required" autocomplete="off">
             <span class="glyphicon glyphicon-user form-control-feedback"></span>
           </div>
 

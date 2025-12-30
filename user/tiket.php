@@ -60,6 +60,7 @@
                           <option value="RANAP">RANAP</option>
                           <option value="IGD">IGD</option>
                           <option value="OK">OK</option>
+                          <option value="HD">HD</option>
                           <option value="LABORATORIUM">LABORATORIUM</option>
                           <option value="RADIOLOGI">RADIOLOGI</option>
                           <option value="FISIOTERAPI">FISOTERAPI</option>
@@ -70,6 +71,7 @@
                           <option value="BAGIAN-UMUN">BAGIAN-UMUN</option>
                           <option value="CASEMIX">CASEMIX</option>
                           <option value="REKAM-MEDIK">REKAM-MEDIK</option>
+                          <option value="GIZI">GIZI</option>
                         </select>
                       </div>  
                       <!-- <div class="form-group">
@@ -94,6 +96,7 @@
                       </div>  
                       <div class="form-group">
                         <label>Keterangan <small style="color:red">*</small> </label>
+                        <small style="color: salmon;">( jika ingin upload file, silahkan upload melalui G.DRIVE lalu pastekan link G.DRIVE ke icon &nbsp; <i class="note-icon-link"></i> 👇)</small>
                         <textarea class="form-control" id="summernote" name="keterangan" placeholder="Jelaskan permasalahan-nya ..."></textarea>
                       </div> 
                       <div class="form-group">
@@ -304,11 +307,19 @@
                                       <option <?php if($d['pengaduan_email']=="RAJAL-POLI SPESIALIS"){echo "selected='selected'";} ?> value="RAJAL-POLI SPESIALIS">RAJAL-POLI SPESIALIS</option>
                                       <option <?php if($d['pengaduan_email']=="RAJAL-POLI UMUM"){echo "selected='selected'";} ?> value="RAJAL-POLI UMUM">RAJAL-POLI UMUM</option>
                                       <option <?php if($d['pengaduan_email']=="RANAP"){echo "selected='selected'";} ?> value="RANAP">RANAP</option>
+                                      <option <?php if($d['pengaduan_email']=="IGD"){echo "selected='selected'";} ?> value="IGD">IGD</option>
+                                      <option <?php if($d['pengaduan_email']=="OK"){echo "selected='selected'";} ?> value="OK">OK</option>
+                                      <option <?php if($d['pengaduan_email']=="HD"){echo "selected='selected'";} ?> value="HD">HD</option>
                                       <option <?php if($d['pengaduan_email']=="LABORATORIUM"){echo "selected='selected'";} ?> value="LABORATORIUM">LABORATORIUM</option>
                                       <option <?php if($d['pengaduan_email']=="RADIOLOGI"){echo "selected='selected'";} ?> value="RADIOLOGI">RADIOLOGI</option>
                                       <option <?php if($d['pengaduan_email']=="FISOTERAPI"){echo "selected='selected'";} ?> value="FISOTERAPI">FISOTERAPI</option>
                                       <option <?php if($d['pengaduan_email']=="FARMASI"){echo "selected='selected'";} ?> value="FARMASI">FARMASI</option>
                                       <option <?php if($d['pengaduan_email']=="KEBIDANAN"){echo "selected='selected'";} ?> value="KEBIDANAN">KEBIDANAN</option>
+                                      <option <?php if($d['pengaduan_email']=="KEUANGAN"){echo "selected='selected'";} ?> value="KEUANGAN">KEUANGAN</option>
+                                      <option <?php if($d['pengaduan_email']=="ADMINISTRASI"){echo "selected='selected'";} ?> value="ADMINISTRASI">ADMINISTRASI</option>
+                                      <option <?php if($d['pengaduan_email']=="BAGIAN-UMUM"){echo "selected='selected'";} ?> value="BAGIAN-UMUM">BAGIAN-UMUM</option>
+                                      <option <?php if($d['pengaduan_email']=="CASEMIX"){echo "selected='selected'";} ?> value="CASEMIX">CASEMIX</option>
+                                      <option <?php if($d['pengaduan_email']=="REKAM-MEDIK"){echo "selected='selected'";} ?> value="REKAM-MEDIK">REKAM-MEDIK</option>
                                       <option <?php if($d['pengaduan_email']=="GIZI"){echo "selected='selected'";} ?> value="GIZI">GIZI</option>
                                     </select>
                                   </div>  
