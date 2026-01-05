@@ -1,15 +1,20 @@
-<?php 
+<?php
 include '../koneksi.php';
-date_default_timezone_set('Asia/Jakarta');
 session_start();
-$saya = $_SESSION['id'];
-$level = "Teknisi";
+
+date_default_timezone_set('Asia/Jakarta');
+
+$saya  = $_SESSION['id'];
 $tiket = $_POST['tiket'];
-$pesan = $_POST['pesan'];
-$waktu = date('Y-m-d H:i:s');
+$pesan = trim($_POST['pesan']);
 
+if($pesan != ""){
+  mysqli_query($koneksi,"
+    INSERT INTO pengaduan_chat 
+    VALUES (NULL,'$tiket','$saya',NOW(),'$pesan','Teknisi')
+  ");
+}
 
-mysqli_query($koneksi,"insert into pengaduan_chat values(NULL,'$tiket','$saya','$waktu','$pesan','$level')");
-header("location:tiket_detail.php?id=$tiket");
-
- ?>
+if(!isset($_SERVER['HTTP_X_REQUESTED_WITH'])){
+  header("location:tiket_detail.php?id=$tiket");
+}

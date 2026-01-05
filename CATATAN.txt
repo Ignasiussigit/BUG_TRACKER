@@ -41,3 +41,61 @@ http://localhost/BUG_TRACKER/daftar_user.php
 
 halaman Login Admin dan Teknisi
 http://localhost/BUG_TRACKER/login.php
+
+
+
+
+UPDATE:
+1. Tambahkan filter berdasarkan tanggal
+2. tambahkan ruangan di admin
+3. kasih popup atau pemberitahuan Ketika teknisi Ketika chat
+4. auto refresh
+5. di bagian user saat membuat tiket baru berikan pleaceholder
+6. di sisi teknisi bisa menambahkan gambar juga (om david)
+
+
+SEDANG BERJALAN
+
+1. menambahkan table ruangan
+CREATE TABLE ruangan (
+  ruangan_id INT AUTO_INCREMENT PRIMARY KEY,
+  ruangan_nama VARCHAR(100) NOT NULL,
+  ruangan_keterangan VARCHAR(255) DEFAULT NULL,
+  ruangan_status ENUM('Aktif','Nonaktif') DEFAULT 'Aktif'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+2. menambahkan file di admin:
+admin/ruangan.php
+admin/ruangan_act.php
+admin/ruangan_update.php
+admin/ruangan_hapus.php
+
+3. menambahkan file di teknisi juga:
+teknisi/ruangan.php
+teknisi/ruangan_act.php
+teknisi/ruangan_update.php
+teknisi/ruangan_hapus.php
+
+4. mengedit file user/tiket.php , Ketika melakukan tambah tiket pada bagian unit-subunit dropdown nya langsung mengambil ke table ruangan yang sudah di buat tadi
+
+5. auto refresh di bagian teknisi dan menambah file baru
+tiket_ajax.php (ini file baru)
+modifikasi di tiket.php
+menambahkan script auto refresh di footer.php
+
+6. tambah filter tanggal di bagian teknisi
+
+7. chat realtime antar user dan teknisi
+user/tiket_chat_ajax.php (file baru)
+user/footer.php
+user/tiket_detail.php
+user/tiket_pesan.php
+user/tiket.php
+
+
+teknisi/tiket_chat_ajax.php (file baru)
+teknisi/footer.php
+teknisi/tiket.php
+teknisi/tiket_pesan.php
+teknisi/tiket_detail.php
+teknisi/header.php

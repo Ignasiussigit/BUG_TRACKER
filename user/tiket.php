@@ -54,24 +54,19 @@
                       <div class="form-group">
                         <label>Unit-SubUnit <small style="color:red">*</small> </label>
                         <select class="form-control" name="email" required>
-                          <option value="">-pilih-</option>
-                          <option value="RAJAL-POLI SPESIALIS">RAJAL-POLI SPESIALIS</option>
-                          <option value="RAJAL-POLI UMUM">RAJAL-POLI UMUM</option>
-                          <option value="RANAP">RANAP</option>
-                          <option value="IGD">IGD</option>
-                          <option value="OK">OK</option>
-                          <option value="HD">HD</option>
-                          <option value="LABORATORIUM">LABORATORIUM</option>
-                          <option value="RADIOLOGI">RADIOLOGI</option>
-                          <option value="FISIOTERAPI">FISOTERAPI</option>
-                          <option value="FARMASI">FARMASI</option>
-                          <option value="KEBIDANAN">KEBIDANAN</option>
-                          <option value="KEUANGAN">KEUANGAN</option>
-                          <option value="ADMINISTRASI">ADMINISTRASI</option>
-                          <option value="BAGIAN-UMUN">BAGIAN-UMUN</option>
-                          <option value="CASEMIX">CASEMIX</option>
-                          <option value="REKAM-MEDIK">REKAM-MEDIK</option>
-                          <option value="GIZI">GIZI</option>
+                          <option value="">-pilih ruangan-</option>
+                            <?php
+                            $ruangan = mysqli_query($koneksi,"
+                              SELECT * FROM ruangan 
+                              WHERE ruangan_status='Aktif'
+                              ORDER BY ruangan_nama ASC
+                            ");
+                            while($r = mysqli_fetch_assoc($ruangan)){
+                            ?>
+                              <option value="<?php echo $r['ruangan_nama']; ?>">
+                                <?php echo $r['ruangan_nama']; ?>
+                              </option>
+                            <?php } ?>
                         </select>
                       </div>  
                       <!-- <div class="form-group">
@@ -79,17 +74,17 @@
                         <input type="email" name="email" required="required" placeholder="email@email.com" class="form-control">
                       </div> -->
 
-                      <!-- <div class="form-group">
-                        <label>Departemen <small style="color:red">*</small> </label>
-                        <input type="text" name="departemen" required="required" placeholder="Ditujukan ke pada bagian (SIMRS)" class="form-control">
-                      </div> -->
                       <div class="form-group">
+                        <label>Departemen <small style="color:red">*</small> </label>
+                        <input type="text" value="SIMRS" readonly name="departemen" required="required" placeholder="Ditujukan ke pada bagian (SIMRS)" class="form-control">
+                      </div>
+                      <!-- <div class="form-group">
                         <label>Departemen <small style="color:red">*</small> </label>
                         <select class="form-control" name="departemen" required>
                           <option value="">-pilih-</option>
                           <option value="SIMRS">SIMRS</option>
                         </select>
-                      </div>  
+                      </div>   -->
                       <div class="form-group">
                         <label>Judul <small style="color:red">*</small> </label>
                         <input type="text" name="judul" required="required" placeholder="Judul Tiket" class="form-control">
@@ -168,7 +163,7 @@
                     <th>NOMOR TIKET</th>                    
                     <th>TANGGAL PENGAJUAN</th>                    
                     <th>TANGGAL PENYELESAIAN</th>
-                    <th>DEVELOPER</th>                    
+                    <th>TEKNISI</th>                    
                     <th>URGENCY</th>                                        
                     <th>JUDUL</th>                                        
                     <th>STATUS</th>                    
@@ -303,24 +298,20 @@
                                     <label>Unit-SubUnit <small style="color:red">*</small> </label>
                                     <br>
                                     <select class="form-control" name="email" required>
-                                      <option value="">-pilih-</option>
-                                      <option <?php if($d['pengaduan_email']=="RAJAL-POLI SPESIALIS"){echo "selected='selected'";} ?> value="RAJAL-POLI SPESIALIS">RAJAL-POLI SPESIALIS</option>
-                                      <option <?php if($d['pengaduan_email']=="RAJAL-POLI UMUM"){echo "selected='selected'";} ?> value="RAJAL-POLI UMUM">RAJAL-POLI UMUM</option>
-                                      <option <?php if($d['pengaduan_email']=="RANAP"){echo "selected='selected'";} ?> value="RANAP">RANAP</option>
-                                      <option <?php if($d['pengaduan_email']=="IGD"){echo "selected='selected'";} ?> value="IGD">IGD</option>
-                                      <option <?php if($d['pengaduan_email']=="OK"){echo "selected='selected'";} ?> value="OK">OK</option>
-                                      <option <?php if($d['pengaduan_email']=="HD"){echo "selected='selected'";} ?> value="HD">HD</option>
-                                      <option <?php if($d['pengaduan_email']=="LABORATORIUM"){echo "selected='selected'";} ?> value="LABORATORIUM">LABORATORIUM</option>
-                                      <option <?php if($d['pengaduan_email']=="RADIOLOGI"){echo "selected='selected'";} ?> value="RADIOLOGI">RADIOLOGI</option>
-                                      <option <?php if($d['pengaduan_email']=="FISOTERAPI"){echo "selected='selected'";} ?> value="FISOTERAPI">FISOTERAPI</option>
-                                      <option <?php if($d['pengaduan_email']=="FARMASI"){echo "selected='selected'";} ?> value="FARMASI">FARMASI</option>
-                                      <option <?php if($d['pengaduan_email']=="KEBIDANAN"){echo "selected='selected'";} ?> value="KEBIDANAN">KEBIDANAN</option>
-                                      <option <?php if($d['pengaduan_email']=="KEUANGAN"){echo "selected='selected'";} ?> value="KEUANGAN">KEUANGAN</option>
-                                      <option <?php if($d['pengaduan_email']=="ADMINISTRASI"){echo "selected='selected'";} ?> value="ADMINISTRASI">ADMINISTRASI</option>
-                                      <option <?php if($d['pengaduan_email']=="BAGIAN-UMUM"){echo "selected='selected'";} ?> value="BAGIAN-UMUM">BAGIAN-UMUM</option>
-                                      <option <?php if($d['pengaduan_email']=="CASEMIX"){echo "selected='selected'";} ?> value="CASEMIX">CASEMIX</option>
-                                      <option <?php if($d['pengaduan_email']=="REKAM-MEDIK"){echo "selected='selected'";} ?> value="REKAM-MEDIK">REKAM-MEDIK</option>
-                                      <option <?php if($d['pengaduan_email']=="GIZI"){echo "selected='selected'";} ?> value="GIZI">GIZI</option>
+                                      <option value="">-pilih ruangan-</option>
+                                        <?php
+                                            $ruangan = mysqli_query($koneksi,"
+                                              SELECT * FROM ruangan 
+                                              WHERE ruangan_status='Aktif'
+                                              ORDER BY ruangan_nama ASC
+                                            ");
+                                            while($r = mysqli_fetch_assoc($ruangan)){
+                                              $selected = ($d['pengaduan_email'] == $r['ruangan_nama']) ? 'selected' : '';
+                                            ?>
+                                              <option value="<?php echo $r['ruangan_nama']; ?>" <?php echo $selected; ?>>
+                                                <?php echo $r['ruangan_nama']; ?>
+                                              </option>
+                                          <?php } ?>
                                     </select>
                                   </div>  
                                   <!-- <div class="form-group" style="width:100%">

@@ -190,7 +190,7 @@
             <div class="box-body">
 
               <!-- mulai -->
-              <div class="direct-chat-messages">
+              <div class="direct-chat-messages" id="chatBox">
 
                 <?php 
                 $chat = mysqli_query($koneksi,"select * from pengaduan_chat where pc_pengaduan='$id'");
@@ -275,10 +275,11 @@
 
 
           <div class="box-footer">
-            <form action="tiket_pesan.php" method="post">
+            <form id="formChat">
+              <input type="hidden" name="tiket" value="<?= $d['pengaduan_id']; ?>">
               <div class="input-group">
-                <input type="hidden" name="tiket" value="<?php echo $d['pengaduan_id'] ?>">
-                <input type="text" name="pesan" placeholder="Type Message ..." class="form-control">
+                <input type="text" name="pesan" id="pesan"
+                      placeholder="Type Message ..." class="form-control" autocomplete="off">
                 <span class="input-group-btn">
                   <button type="submit" class="btn btn-warning btn-flat">Send</button>
                 </span>

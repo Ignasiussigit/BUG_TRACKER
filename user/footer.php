@@ -158,7 +158,55 @@ $tahun_ini = date('Y');
   var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
 
   
+// bagian chat real-time di tiket_detail.php (user)
+let tiketId = <?= $d['pengaduan_id']; ?>;
+let chatInterval = null;
+let typing = false;
 
+function loadChat(scroll=true){
+  $.get('tiket_chat_ajax.php', { id: tiketId }, function(html){
+    $('#chatBox').html(html);
+    if(scroll){
+      $('#chatBox').scrollTop($('#chatBox')[0].scrollHeight);
+    }
+  });
+}
+
+function startChat(){
+  if(chatInterval === null){
+    chatInterval = setInterval(loadChat, 3000);
+  }
+}
+
+function stopChat(){
+  if(chatInterval !== null){
+    clearInterval(chatInterval);
+    chatInterval = null;
+  }
+}
+
+// submit pesan via ajax
+$('#formChat').on('submit', function(e){
+  e.preventDefault();
+
+  let pesan = $('#pesan').val().trim();
+  if(pesan === '') return;
+
+  $.post('tiket_pesan.php', $(this).serialize(), function(){
+    $('#pesan').val('');
+    loadChat(true);
+  });
+});
+
+// pause refresh saat ngetik
+$('#pesan').on('focus', stopChat);
+$('#pesan').on('blur', startChat);
+
+// init
+$(document).ready(function(){
+  loadChat();
+  startChat();
+});
 
 
 </script>

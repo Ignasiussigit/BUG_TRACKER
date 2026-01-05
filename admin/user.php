@@ -221,7 +221,7 @@
                                 </div> -->
                                 <div class="form-group" style="width:100%">
                                   <label>Departemen <small style="color:red">*</small></label>
-                                  <select class="form-control" style="width:100%" name="departemen" required>
+                                  <select class="form-control" style="width:100%" name="departemen" >
                                     <option value="">-pilih-</option>
                                     <option <?php if($d['user_departemen']=="POLI RAJAL"){echo "selected='selected'";} ?> value="POLI RAJAL">POLI RAJAL</option>
                                     <option <?php if($d['user_departemen']=="RANAP"){echo "selected='selected'";} ?> value="RANAP">RANAP</option>

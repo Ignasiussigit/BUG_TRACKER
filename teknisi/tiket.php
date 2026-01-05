@@ -41,33 +41,29 @@
               </div>
             </div> -->
             
-            <div class="pull-left" style="width:250px; margin-right:5px;">
+            <div class="pull-left" style="width:150px; margin-right:5px;">
               <div class="form-group">
                 <label>Filter Unit</label>
                 <select class="form-control" id="filterUnit">
                   <option value="">== Semua Unit ==</option>
-                        <option value="RAJAL-POLI SPESIALIS">RAJAL-POLI SPESIALIS</option>
-                          <option value="RAJAL-POLI UMUM">RAJAL-POLI UMUM</option>
-                          <option value="RANAP">RANAP</option>
-                          <option value="IGD">IGD</option>
-                          <option value="OK">OK</option>
-                          <option value="HD">HD</option>
-                          <option value="LABORATORIUM">LABORATORIUM</option>
-                          <option value="RADIOLOGI">RADIOLOGI</option>
-                          <option value="FISIOTERAPI">FISOTERAPI</option>
-                          <option value="FARMASI">FARMASI</option>
-                          <option value="KEBIDANAN">KEBIDANAN</option>
-                          <option value="KEUANGAN">KEUANGAN</option>
-                          <option value="ADMINISTRASI">ADMINISTRASI</option>
-                          <option value="BAGIAN-UMUN">BAGIAN-UMUN</option>
-                          <option value="CASEMIX">CASEMIX</option>
-                          <option value="REKAM-MEDIK">REKAM-MEDIK</option>
-                          <option value="GIZI">GIZI</option>
+                    <?php
+                        $ruangan = mysqli_query($koneksi,"
+                                              SELECT * FROM ruangan 
+                                              WHERE ruangan_status='Aktif'
+                                              ORDER BY ruangan_nama ASC
+                                            ");
+                                            while($r = mysqli_fetch_assoc($ruangan)){
+                                              $selected = ($d['pengaduan_email'] == $r['ruangan_nama']) ? 'selected' : '';
+                                            ?>
+                      <option value="<?php echo $r['ruangan_nama']; ?>" <?php echo $selected; ?>>
+                        <?php echo $r['ruangan_nama']; ?>
+                      </option>
+                      <?php } ?>
                 </select>
               </div>
             </div>
 
-            <div class="pull-left" style="width:250px; margin-right:5px;">
+            <div class="pull-left" style="width:150px; margin-right:5px;">
               <div class="form-group">
                 <label>Filter Status</label>
                 <select class="form-control" id="filterStatus">
@@ -80,7 +76,7 @@
               </div>
             </div>
 
-            <div class="pull-left" style="width:250px">
+            <div class="pull-left" style="width:180px; margin-right:5px;">
               <div class="form-group">
                 <label>Filter Urgency</label>
                 <select class="form-control" id="filterUrgency">
@@ -91,6 +87,21 @@
                 </select>
               </div>
             </div>
+            
+            <div class="pull-left" style="width:180px; margin-right:5px;">
+              <div class="form-group">
+                <label>Tanggal Dari</label>
+                <input type="date" class="form-control" id="filterTanggalDari">
+              </div>
+            </div>
+
+            <div class="pull-left" style="width:180px;">
+              <div class="form-group">
+                <label>Tanggal Sampai</label>
+                <input type="date" class="form-control" id="filterTanggalSampai">
+              </div>
+            </div>
+
          
           </div>
 
@@ -114,7 +125,7 @@
                     <th>&nbsp;</th>                                    
                   </tr>
                 </thead>
-                <tbody>
+                <tbody id="tiketBody">
                   <?php 
                   $no=1;                  
                   // $data = mysqli_query($koneksi,"SELECT * FROM pengaduan, user where pengaduan_user=user_id order by pengaduan_tanggal desc");

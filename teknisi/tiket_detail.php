@@ -242,7 +242,7 @@
             <div class="box-body">
 
               <!-- mulai -->
-              <div class="direct-chat-messages">
+              <div class="direct-chat-messages" id="chatBox">
 
                 <?php 
                 $chat = mysqli_query($koneksi,"select * from pengaduan_chat where pc_pengaduan='$id'");

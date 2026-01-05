@@ -154,6 +154,11 @@
             </ul>
           </li>
 
+          <li>
+            <a href="ruangan.php">
+              <i class="fa fa-folder"></i> <span>TAMBAH RUANGAN</span>
+            </a>
+          </li>
 
           <li>
             <a href="tiket.php">

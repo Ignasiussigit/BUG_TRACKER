@@ -5,11 +5,8 @@
   </div>
   <strong>&copy; <?php echo date('Y'); ?></strong> - RS.St.Elisabeth Bekasi
 </footer>
-
-
-
-
 </div>
+
 
 
 <script src="../assets/bower_components/jquery/dist/jquery.min.js"></script>
@@ -54,6 +51,17 @@
 <script src="../assets/dist/js/demo.js"></script>
 <script src="../assets/bower_components/ckeditor/ckeditor.js"></script>
 
+<style>
+  /* efek highlight tiket baru */
+  .row-new {
+    animation: newRowFlash 2.5s ease-in-out;
+  }
+
+  @keyframes newRowFlash {
+    0%   { background-color: #fff3cd; } /* kuning muda */
+    100% { background-color: transparent; }
+  }
+</style>
 
 <?php
 include '../koneksi.php';
@@ -194,8 +202,130 @@ $tahun_ini = date('Y');
   var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
 
   
+// bagain auto refresh halaman teknisi
+
+let refreshInterval = null;
+let knownTicketIds = new Set();
+
+function loadTiket(){
+  let unit    = $('#filterUnit').val();
+  let status  = $('#filterStatus').val();
+  let urgency = $('#filterUrgency').val();
+  let dari    = $('#filterTanggalDari').val();
+  let sampai  = $('#filterTanggalSampai').val();
+
+  $.ajax({
+    url: 'tiket_ajax.php',
+    type: 'GET',
+    data: { unit, status, urgency, dari, sampai },
+    success: function(html){
+
+      let $temp = $('<tbody>' + html + '</tbody>');
+      let newIds = [];
+
+      $temp.find('tr[data-id]').each(function(){
+        let id = $(this).attr('data-id');
+        if(id && !knownTicketIds.has(id)){
+          newIds.push(id);
+        }
+      });
+
+      $('#tiketBody').html($temp.html());
+
+      newIds.forEach(function(id){
+        knownTicketIds.add(id);
+        $('#tiketBody')
+          .find('tr[data-id="'+id+'"]')
+          .addClass('row-new');
+      });
+
+      $('#tiketBody').find('tr[data-id]').each(function(){
+        knownTicketIds.add($(this).attr('data-id'));
+      });
+    }
+  });
+}
+
+function startAutoRefresh(){
+  if(refreshInterval === null){
+    refreshInterval = setInterval(loadTiket, 5000);
+  }
+}
+
+function stopAutoRefresh(){
+  if(refreshInterval !== null){
+    clearInterval(refreshInterval);
+    refreshInterval = null;
+  }
+}
+
+// ========================================
+$(document).on('show.bs.modal', '.modal', stopAutoRefresh);
+
+$(document).on('hidden.bs.modal', '.modal', startAutoRefresh);
+
+$('#filterUnit, #filterStatus, #filterUrgency, #filterTanggalDari, #filterTanggalSampai')
+  .on('change', function(){
+    knownTicketIds = new Set();
+    loadTiket();
+});
 
 
+$(document).ready(function(){
+  loadTiket();
+  startAutoRefresh();
+});
+
+// chat real-time 
+
+let tiketId = <?= $d['pengaduan_id']; ?>;
+let chatInterval = null;
+
+function loadChat(scroll=true){
+  $.get('tiket_chat_ajax.php', { id: tiketId }, function(html){
+    $('#chatBox').html(html);
+    if(scroll){
+      let box = document.getElementById('chatBox');
+      box.scrollTop = box.scrollHeight;
+    }
+  });
+}
+
+function startChat(){
+  if(chatInterval === null){
+    chatInterval = setInterval(loadChat, 3000);
+  }
+}
+
+function stopChat(){
+  if(chatInterval !== null){
+    clearInterval(chatInterval);
+    chatInterval = null;
+  }
+}
+
+// ini untk kirim pesan 
+$('#formChat').on('submit', function(e){
+  e.preventDefault();
+
+  let pesan = $('#pesan').val().trim();
+  if(pesan === '') return;
+
+  $.post('tiket_pesan.php', $(this).serialize(), function(){
+    $('#pesan').val('');
+    loadChat(true);
+  });
+});
+
+// pause refresh saat ngetik
+$('#pesan').on('focus', stopChat);
+$('#pesan').on('blur', startChat);
+
+
+$(document).ready(function(){
+  loadChat();
+  startChat();
+});
 
 </script>
 </body>
