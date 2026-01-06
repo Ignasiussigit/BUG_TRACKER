@@ -47,14 +47,15 @@ http://localhost/BUG_TRACKER/login.php
 
 UPDATE:
 1. Tambahkan filter berdasarkan tanggal
-2. tambahkan ruangan di admin
-3. kasih popup atau pemberitahuan Ketika teknisi Ketika chat
-4. auto refresh
+2. Insert ruangan di admin dan teknisi
+3. chat realtime
+4. auto refresh di bagaian teknisi (tiket)
 5. di bagian user saat membuat tiket baru berikan pleaceholder
 6. di sisi teknisi bisa menambahkan gambar juga (om david)
 
 
 SEDANG BERJALAN
+solusi user id (Ketika user melakukan tambah tiket muncul 2 dengan nama "RITA SUGIARTI" dan "ENDANG KADARSIH KADARSIH")
 
 1. menambahkan table ruangan
 CREATE TABLE ruangan (

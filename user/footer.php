@@ -159,54 +159,71 @@ $tahun_ini = date('Y');
 
   
 // bagian chat real-time di tiket_detail.php (user)
-let tiketId = <?= $d['pengaduan_id']; ?>;
-let chatInterval = null;
-let typing = false;
+(function(){
 
-function loadChat(scroll=true){
-  $.get('tiket_chat_ajax.php', { id: tiketId }, function(html){
-    $('#chatBox').html(html);
-    if(scroll){
-      $('#chatBox').scrollTop($('#chatBox')[0].scrollHeight);
+  // Cek apakah halaman ini punya chatBox
+  const chatBox = document.getElementById('chatBox');
+  if(!chatBox) return; // ⬅️ keluar jika bukan halaman tiket_detail
+
+  // Ambil tiket ID dari data attribute
+  const tiketId = chatBox.dataset.tiketId;
+  if(!tiketId) return;
+
+  let chatInterval = null;
+  const pesanInput = document.getElementById('pesan');
+  const formChat = document.getElementById('formChat');
+
+  function loadChat(scroll=true){
+    fetch('tiket_chat_ajax.php?id=' + tiketId)
+      .then(res => res.text())
+      .then(html => {
+        chatBox.innerHTML = html;
+        if(scroll){
+          chatBox.scrollTop = chatBox.scrollHeight;
+        }
+      });
+  }
+
+  function startChat(){
+    if(chatInterval === null){
+      chatInterval = setInterval(loadChat, 3000);
     }
-  });
-}
-
-function startChat(){
-  if(chatInterval === null){
-    chatInterval = setInterval(loadChat, 3000);
   }
-}
 
-function stopChat(){
-  if(chatInterval !== null){
-    clearInterval(chatInterval);
-    chatInterval = null;
+  function stopChat(){
+    if(chatInterval !== null){
+      clearInterval(chatInterval);
+      chatInterval = null;
+    }
   }
-}
 
-// submit pesan via ajax
-$('#formChat').on('submit', function(e){
-  e.preventDefault();
+  // Submit pesan (AJAX)
+  if(formChat){
+    formChat.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(!pesanInput.value.trim()) return;
 
-  let pesan = $('#pesan').val().trim();
-  if(pesan === '') return;
+      fetch('tiket_pesan.php', {
+        method: 'POST',
+        body: new FormData(formChat)
+      }).then(() => {
+        pesanInput.value = '';
+        loadChat(true);
+      });
+    });
+  }
 
-  $.post('tiket_pesan.php', $(this).serialize(), function(){
-    $('#pesan').val('');
-    loadChat(true);
-  });
-});
+  // Pause saat mengetik
+  if(pesanInput){
+    pesanInput.addEventListener('focus', stopChat);
+    pesanInput.addEventListener('blur', startChat);
+  }
 
-// pause refresh saat ngetik
-$('#pesan').on('focus', stopChat);
-$('#pesan').on('blur', startChat);
-
-// init
-$(document).ready(function(){
+  // Init
   loadChat();
   startChat();
-});
+
+})();
 
 
 </script>

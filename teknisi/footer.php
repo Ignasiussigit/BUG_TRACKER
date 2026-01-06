@@ -278,54 +278,72 @@ $(document).ready(function(){
 
 // chat real-time 
 
-let tiketId = <?= $d['pengaduan_id']; ?>;
-let chatInterval = null;
+(function(){
 
-function loadChat(scroll=true){
-  $.get('tiket_chat_ajax.php', { id: tiketId }, function(html){
-    $('#chatBox').html(html);
-    if(scroll){
-      let box = document.getElementById('chatBox');
-      box.scrollTop = box.scrollHeight;
+  // cek apakah halaman ini punya chat
+  const chatBox = document.getElementById('chatBox');
+  if(!chatBox) return;
+
+  const tiketId = chatBox.dataset.tiketId;
+  if(!tiketId) return;
+
+  const formChat  = document.getElementById('formChat');
+  const pesanInput = document.getElementById('pesan');
+
+  let chatInterval = null;
+
+  function loadChat(scroll=true){
+    fetch('tiket_chat_ajax.php?id=' + tiketId)
+      .then(res => res.text())
+      .then(html => {
+        chatBox.innerHTML = html;
+        if(scroll){
+          chatBox.scrollTop = chatBox.scrollHeight;
+        }
+      });
+  }
+
+  function startChat(){
+    if(chatInterval === null){
+      chatInterval = setInterval(loadChat, 3000);
     }
-  });
-}
-
-function startChat(){
-  if(chatInterval === null){
-    chatInterval = setInterval(loadChat, 3000);
   }
-}
 
-function stopChat(){
-  if(chatInterval !== null){
-    clearInterval(chatInterval);
-    chatInterval = null;
+  function stopChat(){
+    if(chatInterval !== null){
+      clearInterval(chatInterval);
+      chatInterval = null;
+    }
   }
-}
 
-// ini untk kirim pesan 
-$('#formChat').on('submit', function(e){
-  e.preventDefault();
+  // kirim pesan via ajax
+  if(formChat){
+    formChat.addEventListener('submit', function(e){
+      e.preventDefault();
 
-  let pesan = $('#pesan').val().trim();
-  if(pesan === '') return;
+      if(!pesanInput.value.trim()) return;
 
-  $.post('tiket_pesan.php', $(this).serialize(), function(){
-    $('#pesan').val('');
-    loadChat(true);
-  });
-});
+      fetch('tiket_pesan.php', {
+        method: 'POST',
+        body: new FormData(formChat)
+      }).then(() => {
+        pesanInput.value = '';
+        loadChat(true);
+      });
+    });
+  }
 
-// pause refresh saat ngetik
-$('#pesan').on('focus', stopChat);
-$('#pesan').on('blur', startChat);
+  // pause refresh saat mengetik
+  if(pesanInput){
+    pesanInput.addEventListener('focus', stopChat);
+    pesanInput.addEventListener('blur', startChat);
+  }
 
-
-$(document).ready(function(){
+  // init
   loadChat();
   startChat();
-});
+
+})();
 
 </script>
 </body>
