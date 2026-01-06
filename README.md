@@ -1,3 +1,5 @@
+https://trakteer.id/ignasius_sigit/gift
+
 Aplikasi Bugtracker/helpdesk untuk Rumah Sakit berbasis website ini dibangun menggunakan bahasa pemrograman PHP dengan database MYSQL. code ini sudah bisa digunakan di PHP versi terbaru.
 code ini sudah dilakukan ujicoba dan hasilnya berjalan dengan baik tidak terdapat eror atau tidak berjalan dengan semesterinya. Dalam pengkodean aplikasi helpdesk ini memang masih bantak yang perlu di kembangkan lagi dengan fitur-fitur terbaru sehingga akan menjadi semakin baik dan powerfull.
 
